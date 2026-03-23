@@ -5,13 +5,13 @@
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-T8B6W6R7');</script>
 <!-- End Google Tag Manager -->
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TapNPay+ | Every Community Has Fans</title>
-<meta name="description" content="TapNPay+ is the mobile app where every fan's daily purchases count for the programs, teams, and athletes they love and rally around.">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>TapNPay+ | Shop. Earn. Support Every Day.</title>
+<meta name="description" content="TapNPay+ is the Cash Back Impact App where every fan's daily purchases count for the programs, teams, and athletes they love.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.tapnpayplus.com">
-<meta property="og:title" content="TapNPay+ | Every Community Has Fans">
-<meta property="og:description" content="The mobile app where every fan's daily purchases count for the programs, teams, and athletes they love.">
+<meta property="og:title" content="TapNPay+ | Shop. Earn. Support Every Day.">
+<meta property="og:description" content="Earn unlimited instant cash back on everyday purchases while directly impacting your group.">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAe0lEQVR4nGNgGAWjYBSMglEwCkYBNQEjAwMDIxMwYGJmBjFZWNlAPHYOTi5uEI+bhxfE4+cXEBQSBvFERMXEJUB8CUkpaRk5EF9WTl5BUQnEV1ZRVVMHCzQ0amrpgASamls0dfTAfD19A0MjY7DYKBgFo2AUjIJRQA4AAMHYBQsVpmVcAAAAAElFTkSuQmCC">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,12 +20,10 @@
 :root{--purple-deep:#1A0A3E;--purple-core:#4A1D96;--purple-mid:#6D28D9;--purple-bright:#8B5CF6;--purple-glow:#A78BFA;--purple-soft:#C4B5FD;--green-neon:#00E676;--green-bright:#34D399;--green-dark:#16A34A;--white:#FFFFFF;--dark:#06020F;--dark-card:#0E0822;--dark-card2:#130A2E;}
 *{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
 body{font-family:'Outfit',sans-serif;background:var(--dark);color:var(--white);overflow-x:hidden;}
-
-/* NOISE GRAIN */
 body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:0.025;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-repeat:repeat;background-size:128px 128px;}
 
 /* SCROLL PROGRESS */
-.scroll-progress{position:fixed;top:72px;left:0;height:2px;background:linear-gradient(90deg,var(--green-neon),var(--purple-bright),var(--green-neon));background-size:200% 100%;animation:shimmer-bar 3s linear infinite;z-index:1001;width:0;}
+.scroll-progress{position:fixed;top:72px;left:0;height:2px;background:linear-gradient(90deg,var(--green-neon),var(--purple-bright),var(--green-neon));background-size:200% 100%;animation:shimmer-bar 3s linear infinite;z-index:1001;width:0;transition:width 0.1s;}
 @keyframes shimmer-bar{0%{background-position:0% 0;}100%{background-position:200% 0;}}
 
 /* NAVBAR */
@@ -34,14 +32,21 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;o
 .nav-left{display:flex;align-items:center;gap:12px;}
 .navbar-logo{font-family:'Bebas Neue',sans-serif;font-size:28px;letter-spacing:2px;color:var(--white);text-decoration:none;cursor:pointer;}
 .navbar-logo span{color:var(--green-neon);}
-.nav-links{display:flex;align-items:center;gap:24px;}
-.nav-links a{font-size:12px;font-weight:500;color:rgba(255,255,255,0.45);text-decoration:none;text-transform:uppercase;letter-spacing:1.5px;transition:color 0.3s;position:relative;cursor:pointer;}
-.nav-links a:hover{color:var(--white);}
-.nav-links a.active{color:var(--white);}
+.nav-links{display:flex;align-items:center;gap:20px;}
+.nav-links a{font-size:11px;font-weight:600;color:rgba(255,255,255,0.45);text-decoration:none;text-transform:uppercase;letter-spacing:1.5px;transition:color 0.3s;position:relative;cursor:pointer;white-space:nowrap;}
+.nav-links a:hover,.nav-links a.active{color:var(--white);}
 .nav-links a.active::after{content:'';position:absolute;bottom:-4px;left:0;right:0;height:2px;background:var(--green-neon);border-radius:1px;}
-.btn-primary{background:linear-gradient(135deg,var(--green-neon),var(--green-dark));color:var(--dark);font-weight:800;font-size:13px;padding:11px 28px;border-radius:50px;border:none;cursor:pointer;text-transform:uppercase;letter-spacing:2px;transition:all 0.4s;text-decoration:none;display:inline-block;position:relative;overflow:hidden;}
+/* DROPDOWN */
+.nav-dropdown{position:relative;}
+.nav-dropdown:hover .dropdown-menu,.nav-dropdown:focus-within .dropdown-menu{display:flex;}
+.dropdown-menu{display:none;position:absolute;top:calc(100% + 12px);left:50%;transform:translateX(-50%);flex-direction:column;background:rgba(14,8,34,0.98);backdrop-filter:blur(20px);border:1px solid rgba(139,92,246,0.15);border-radius:12px;overflow:hidden;min-width:180px;box-shadow:0 16px 40px rgba(0,0,0,0.4);}
+.dropdown-menu a{padding:12px 20px;font-size:11px;font-weight:600;color:rgba(255,255,255,0.6);text-transform:uppercase;letter-spacing:1.5px;text-decoration:none;transition:all 0.2s;border-bottom:1px solid rgba(139,92,246,0.06);}
+.dropdown-menu a:last-child{border-bottom:none;}
+.dropdown-menu a:hover{color:var(--green-neon);background:rgba(0,230,118,0.04);}
+.nav-chevron{font-size:8px;margin-left:3px;opacity:0.5;}
+.btn-primary{background:linear-gradient(135deg,var(--green-neon),var(--green-dark));color:var(--dark);font-weight:800;font-size:12px;padding:10px 24px;border-radius:50px;border:none;cursor:pointer;text-transform:uppercase;letter-spacing:2px;transition:all 0.4s;text-decoration:none;display:inline-block;position:relative;overflow:hidden;}
 .btn-primary:hover{transform:translateY(-3px);box-shadow:0 12px 40px rgba(0,230,118,0.25);}
-.btn-secondary{background:transparent;color:var(--white);font-weight:700;font-size:13px;padding:11px 28px;border-radius:50px;border:1px solid rgba(139,92,246,0.3);cursor:pointer;text-transform:uppercase;letter-spacing:2px;transition:all 0.4s;text-decoration:none;display:inline-block;position:relative;overflow:hidden;}
+.btn-secondary{background:transparent;color:var(--white);font-weight:700;font-size:12px;padding:10px 24px;border-radius:50px;border:1px solid rgba(139,92,246,0.3);cursor:pointer;text-transform:uppercase;letter-spacing:2px;transition:all 0.4s;text-decoration:none;display:inline-block;position:relative;overflow:hidden;}
 .btn-secondary:hover{border-color:var(--purple-bright);background:rgba(139,92,246,0.08);transform:translateY(-2px);}
 .btn-ripple{position:absolute;border-radius:50%;background:rgba(255,255,255,0.3);transform:scale(0);animation:ripple-out 0.6s ease-out;pointer-events:none;}
 @keyframes ripple-out{to{transform:scale(4);opacity:0;}}
@@ -50,30 +55,30 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;o
 
 /* GLOBALS */
 .container{max-width:1100px;margin:0 auto;padding:0 24px;}
-.section-pad{padding:120px 24px;scroll-margin-top:80px;}
+.section-pad{padding:110px 24px;scroll-margin-top:80px;}
 .section-header{text-align:center;margin-bottom:64px;}
 .section-label{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:4px;color:var(--green-neon);margin-bottom:16px;}
-.section-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(36px,5vw,56px);letter-spacing:2px;line-height:1.0;}
-.section-subtitle{font-size:16px;color:rgba(255,255,255,0.5);max-width:600px;margin:18px auto 0;line-height:1.7;}
+.section-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(36px,5vw,54px);letter-spacing:2px;line-height:1.0;}
+.section-subtitle{font-size:16px;color:rgba(255,255,255,0.5);max-width:620px;margin:18px auto 0;line-height:1.75;}
 .section-divider{height:1px;background:linear-gradient(90deg,transparent,rgba(139,92,246,0.12),transparent);margin:0 auto;max-width:600px;}
+.gradient-text{background:linear-gradient(135deg,var(--green-neon),var(--purple-bright));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
 
-/* GLOW CARDS */
+/* CARDS */
 .glow-card{position:relative;background:var(--dark-card);border-radius:24px;padding:36px;overflow:hidden;transition:transform 0.4s,box-shadow 0.4s;}
 .glow-card::before{content:'';position:absolute;inset:-1px;border-radius:24px;padding:1px;background:linear-gradient(135deg,rgba(139,92,246,0.2),rgba(0,230,118,0.1),rgba(139,92,246,0.05));-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;}
 .glow-card:hover{transform:translateY(-6px);box-shadow:0 20px 60px rgba(139,92,246,0.12);}
 .glow-card h3{font-size:20px;font-weight:700;margin-bottom:12px;}
-.glow-card p{font-size:14px;color:rgba(255,255,255,0.55);line-height:1.7;}
+.glow-card p{font-size:14px;color:rgba(255,255,255,0.55);line-height:1.75;}
 .card-glow{position:absolute;width:300px;height:300px;border-radius:50%;pointer-events:none;background:radial-gradient(circle,rgba(0,230,118,0.08) 0%,transparent 70%);transform:translate(-50%,-50%);opacity:0;transition:opacity 0.3s;}
-
-.steps-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px;}
 .step-card{background:var(--dark-card);border:1px solid rgba(139,92,246,0.08);border-radius:24px;padding:36px;overflow:hidden;position:relative;transition:transform 0.4s,box-shadow 0.4s;}
 .step-card:hover{transform:translateY(-4px);box-shadow:0 16px 48px rgba(139,92,246,0.1);}
 .step-card h3{font-size:18px;font-weight:700;margin-bottom:8px;}
-.step-card p{font-size:14px;color:rgba(255,255,255,0.55);line-height:1.7;}
+.step-card p{font-size:14px;color:rgba(255,255,255,0.55);line-height:1.75;}
 .step-number{width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,var(--green-neon),var(--green-dark));color:var(--dark);font-weight:800;font-size:20px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;box-shadow:0 8px 24px rgba(0,230,118,0.15);}
-
+.steps-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px;}
 .pill{display:inline-flex;align-items:center;gap:8px;padding:8px 20px;border-radius:50px;font-size:13px;font-weight:600;background:rgba(139,92,246,0.06);border:1px solid rgba(139,92,246,0.12);color:rgba(255,255,255,0.7);}
 .pill strong{color:var(--green-neon);font-size:15px;}
+.stat-big{font-family:'Bebas Neue',sans-serif;font-size:clamp(48px,7vw,72px);letter-spacing:2px;color:var(--white);line-height:1;}
 
 /* HERO */
 .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:120px 24px 80px;position:relative;overflow:hidden;}
@@ -88,98 +93,142 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;o
 .particles{position:absolute;inset:0;overflow:hidden;pointer-events:none;}
 .particle{position:absolute;border-radius:50%;animation:float-up linear infinite;opacity:0;}
 @keyframes float-up{0%{transform:translateY(100vh) scale(0);opacity:0;}10%{opacity:0.8;}90%{opacity:0.3;}100%{transform:translateY(-20vh) scale(1.5);opacity:0;}}
-.hero-content{position:relative;z-index:2;max-width:860px;transition:transform 0.1s linear;}
-.hero-eyebrow{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:4px;color:var(--green-neon);margin-bottom:24px;display:flex;align-items:center;justify-content:center;gap:10px;opacity:0;animation:fade-up 0.8s 0.2s forwards;}
-.live-dot{width:8px;height:8px;border-radius:50%;background:var(--green-neon);box-shadow:0 0 12px rgba(0,230,118,0.6);animation:pulse-dot 2s infinite;}
-@keyframes pulse-dot{0%,100%{box-shadow:0 0 0 0 rgba(0,230,118,0.4);}50%{box-shadow:0 0 0 10px rgba(0,230,118,0);}}
-.hero-h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(48px,8vw,88px);letter-spacing:3px;line-height:0.92;margin-bottom:28px;opacity:0;animation:fade-up 0.8s 0.4s forwards;}
-.gradient-text{background:linear-gradient(135deg,var(--green-neon) 0%,var(--green-bright) 40%,var(--purple-glow) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
-.hero-sub{font-size:17px;color:rgba(255,255,255,0.6);line-height:1.75;max-width:700px;margin:0 auto 36px;opacity:0;animation:fade-up 0.8s 0.6s forwards;}
-.hero-pills{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;opacity:0;animation:fade-up 0.8s 0.8s forwards;}
-.hero-cta{margin-top:40px;opacity:0;animation:fade-up 0.8s 1s forwards;}
-@keyframes fade-up{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
+.hero-content{position:relative;z-index:2;max-width:900px;transition:transform 0.1s linear;}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:3px;color:rgba(255,255,255,0.5);margin-bottom:28px;}
+.live-dot{width:6px;height:6px;border-radius:50%;background:var(--green-neon);box-shadow:0 0 8px var(--green-neon);animation:pulse-dot 2s ease-in-out infinite;}
+@keyframes pulse-dot{0%,100%{opacity:1;transform:scale(1);}50%{opacity:0.5;transform:scale(1.5);}}
+.hero-h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(52px,9vw,100px);letter-spacing:3px;line-height:0.95;margin-bottom:28px;opacity:0;animation:fade-up 0.8s 0.3s forwards;}
+@keyframes fade-up{from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);}}
+.hero-sub{font-size:18px;color:rgba(255,255,255,0.55);line-height:1.75;max-width:680px;margin:0 auto 36px;opacity:0;animation:fade-up 0.8s 0.6s forwards;}
+.hero-pills{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:40px;opacity:0;animation:fade-up 0.8s 0.9s forwards;}
+.hero-cta{opacity:0;animation:fade-up 0.8s 1.1s forwards;}
 
-/* STAT BIG */
-.stat-big{font-family:'Bebas Neue',sans-serif;font-size:56px;color:var(--green-neon);line-height:1;}
+/* VIDEO PLACEHOLDER */
+.video-frame{position:relative;border-radius:24px;overflow:hidden;background:var(--dark-card);border:1px solid rgba(139,92,246,0.15);box-shadow:0 24px 80px rgba(0,0,0,0.5);}
+.video-frame::before{content:'';position:absolute;inset:-1px;border-radius:24px;padding:1px;background:linear-gradient(135deg,rgba(0,230,118,0.3),rgba(139,92,246,0.2),rgba(0,230,118,0.1));-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;z-index:1;pointer-events:none;}
+.video-inner{position:relative;width:100%;padding-bottom:56.25%;background:linear-gradient(135deg,#0E0822,#1A0A3E);}
+.video-inner iframe{position:absolute;inset:0;width:100%;height:100%;border:none;}
+.video-placeholder-ui{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;}
+.video-play-btn{width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,var(--green-neon),var(--green-dark));display:flex;align-items:center;justify-content:center;box-shadow:0 0 40px rgba(0,230,118,0.3);cursor:pointer;transition:all 0.3s;}
+.video-play-btn:hover{transform:scale(1.08);box-shadow:0 0 60px rgba(0,230,118,0.4);}
+.video-play-btn svg{width:24px;height:24px;fill:var(--dark);margin-left:3px;}
+.video-label{font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:3px;color:rgba(255,255,255,0.6);}
+.video-sublabel{font-size:12px;color:rgba(255,255,255,0.25);letter-spacing:2px;text-transform:uppercase;}
 
-/* BRANDS MARQUEE */
-.brands-section{padding:100px 24px;overflow:hidden;scroll-margin-top:80px;}
-.marquee-container{overflow:hidden;margin-bottom:16px;-webkit-mask:linear-gradient(90deg,transparent,#fff 8%,#fff 92%,transparent);mask:linear-gradient(90deg,transparent,#fff 8%,#fff 92%,transparent);}
-.logo-marquee{display:flex;gap:14px;animation:marquee 80s linear infinite;width:max-content;}
-.logo-marquee.reverse{animation-direction:reverse;}
-.logo-marquee.slow{animation-duration:110s;}
+/* MARQUEE */
+.brands-section{padding:60px 0;overflow:hidden;}
+.marquee-container{overflow:hidden;margin-bottom:16px;mask-image:linear-gradient(90deg,transparent,black 10%,black 90%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,black 10%,black 90%,transparent);}
+.logo-marquee{display:flex;gap:12px;width:max-content;animation:marquee 60s linear infinite;}
+.logo-marquee.reverse{animation-direction:reverse;animation-duration:75s;}
+.logo-marquee.slow{animation-duration:90s;}
+.logo-marquee.fast{animation-duration:45s;}
 @keyframes marquee{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
 .brand-chip{display:flex;align-items:center;gap:10px;background:rgba(14,8,34,0.8);border:1px solid rgba(139,92,246,0.08);border-radius:12px;padding:10px 18px;flex-shrink:0;transition:border-color 0.3s;}
 .brand-chip:hover{border-color:rgba(139,92,246,0.25);}
-.brand-chip img{width:24px;height:24px;border-radius:4px;}
-.brand-name{font-size:13px;font-weight:600;white-space:nowrap;color:rgba(255,255,255,0.7);}
+.brand-chip img{width:22px;height:22px;border-radius:4px;}
+.brand-name{font-size:13px;font-weight:600;white-space:nowrap;color:rgba(255,255,255,0.65);}
 
 /* FAQ */
-.faq-list{max-width:720px;margin:0 auto;}
+.faq-list{max-width:780px;margin:0 auto;}
 .faq-item{border:1px solid rgba(139,92,246,0.1);border-radius:20px;margin-bottom:12px;overflow:hidden;background:rgba(14,8,34,0.6);}
 .faq-q{padding:22px 28px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-weight:600;font-size:15px;transition:background 0.3s;}
 .faq-q:hover{background:rgba(139,92,246,0.04);}
-.faq-icon{font-size:24px;color:var(--green-neon);transition:transform 0.3s;font-weight:300;}
+.faq-icon{font-size:24px;color:var(--green-neon);transition:transform 0.3s;font-weight:300;flex-shrink:0;margin-left:16px;}
 .faq-item.open .faq-icon{transform:rotate(45deg);}
-.faq-a{max-height:0;overflow:hidden;transition:max-height 0.4s ease,padding 0.3s;padding:0 28px;}
-.faq-item.open .faq-a{max-height:400px;padding:0 28px 22px;}
-.faq-a p{font-size:14px;color:rgba(255,255,255,0.55);line-height:1.7;}
+.faq-a{max-height:0;overflow:hidden;transition:max-height 0.45s ease,padding 0.3s;padding:0 28px;}
+.faq-item.open .faq-a{max-height:600px;padding:0 28px 24px;}
+.faq-a p{font-size:14px;color:rgba(255,255,255,0.55);line-height:1.8;margin-bottom:10px;}
+.faq-a p:last-child{margin-bottom:0;}
 
-/* FORM */
-.contact-form{max-width:560px;margin:0 auto;}
+/* CONTACT FORM */
+.contact-form{max-width:580px;margin:0 auto;}
 .form-group{margin-bottom:16px;}
-.form-group input,.form-group textarea{width:100%;padding:14px 18px;border-radius:12px;border:1px solid rgba(139,92,246,0.15);background:rgba(14,8,34,0.6);color:var(--white);font-family:'Outfit',sans-serif;font-size:15px;outline:none;transition:border 0.3s,box-shadow 0.3s;}
-.form-group input:focus,.form-group textarea:focus{border-color:var(--green-neon);box-shadow:0 0 20px rgba(0,230,118,0.08);}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:14px 18px;border-radius:12px;border:1px solid rgba(139,92,246,0.15);background:rgba(14,8,34,0.6);color:var(--white);font-family:'Outfit',sans-serif;font-size:15px;outline:none;transition:border 0.3s,box-shadow 0.3s;}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--green-neon);box-shadow:0 0 20px rgba(0,230,118,0.08);}
+.form-group input::placeholder,.form-group textarea::placeholder{color:rgba(255,255,255,0.25);}
+.form-group select{color:rgba(255,255,255,0.6);cursor:pointer;}
+.form-group select option{background:#0E0822;color:var(--white);}
 .form-group textarea{min-height:120px;resize:vertical;}
 .form-submit{width:100%;padding:16px;border:none;border-radius:50px;background:linear-gradient(135deg,var(--green-neon),var(--green-dark));color:var(--dark);font-weight:800;font-size:15px;text-transform:uppercase;letter-spacing:2px;cursor:pointer;transition:all 0.4s;position:relative;overflow:hidden;}
 .form-submit:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(0,230,118,0.2);}
+.form-success{display:none;text-align:center;padding:24px;font-size:16px;font-weight:700;color:var(--green-neon);}
+
+/* PARTNER CASE STUDY */
+.partner-card{background:var(--dark-card);border-radius:28px;padding:48px;border:1px solid rgba(139,92,246,0.12);position:relative;overflow:hidden;}
+.partner-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--green-neon),var(--purple-bright));}
+
+/* TEAM */
+.team-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:24px;max-width:800px;margin:0 auto;}
+.team-card{background:var(--dark-card);border:1px solid rgba(139,92,246,0.1);border-radius:20px;padding:32px 24px;text-align:center;}
+.team-role{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:3px;color:var(--green-neon);margin-bottom:8px;}
+.team-name{font-size:18px;font-weight:700;margin-bottom:8px;}
+.team-desc{font-size:13px;color:rgba(255,255,255,0.45);line-height:1.6;}
+
+/* ICON FEATURE ROW */
+.feature-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:32px;}
+.feature-item{display:flex;gap:20px;align-items:flex-start;}
+.feature-icon{width:52px;height:52px;border-radius:14px;background:rgba(0,230,118,0.08);border:1px solid rgba(0,230,118,0.15);display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0;}
+.feature-text h4{font-size:17px;font-weight:700;margin-bottom:6px;}
+.feature-text p{font-size:14px;color:rgba(255,255,255,0.5);line-height:1.7;}
 
 /* FOOTER */
 .footer{padding:48px 24px;border-top:1px solid rgba(139,92,246,0.06);}
-.footer-inner{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:24px;}
-.f-logo{font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:2px;}
+.footer-inner{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:32px;}
+.f-logo{font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:2px;}
 .f-logo span{color:var(--green-neon);}
-.footer-left p{font-size:11px;color:rgba(255,255,255,0.3);margin-top:4px;}
-.footer-links{display:flex;gap:24px;}
-.footer-links a{font-size:12px;color:rgba(255,255,255,0.35);text-decoration:none;transition:color 0.3s;}
-.footer-links a:hover{color:var(--white);}
-.footer-social{display:flex;gap:10px;}
-.social-icon{width:36px;height:36px;border-radius:50%;border:1px solid rgba(139,92,246,0.12);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:rgba(255,255,255,0.35);text-decoration:none;transition:all 0.3s;}
+.footer-left p{font-size:11px;color:rgba(255,255,255,0.3);margin-top:6px;line-height:1.6;}
+.footer-col h5{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:rgba(255,255,255,0.3);margin-bottom:14px;}
+.footer-col a{display:block;font-size:13px;color:rgba(255,255,255,0.4);text-decoration:none;margin-bottom:8px;transition:color 0.3s;cursor:pointer;}
+.footer-col a:hover{color:var(--white);}
+.footer-social{display:flex;gap:10px;flex-wrap:wrap;}
+.social-icon{width:38px;height:38px;border-radius:50%;border:1px solid rgba(139,92,246,0.12);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:rgba(255,255,255,0.35);text-decoration:none;transition:all 0.3s;}
 .social-icon:hover{border-color:var(--green-neon);color:var(--green-neon);}
+.app-badges{display:flex;flex-direction:column;gap:10px;margin-top:12px;}
+.app-badge{display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border-radius:10px;border:1px solid rgba(139,92,246,0.15);background:rgba(14,8,34,0.6);font-size:11px;font-weight:600;color:rgba(255,255,255,0.6);text-decoration:none;transition:all 0.3s;white-space:nowrap;}
+.app-badge:hover{border-color:var(--green-neon);color:var(--green-neon);}
 
 /* REVEAL */
 .reveal{opacity:0;transform:translateY(28px);transition:opacity 0.7s ease,transform 0.7s ease;}
 .reveal.visible{opacity:1;transform:translateY(0);}
-.reveal-d1{transition-delay:0.1s;}.reveal-d2{transition-delay:0.2s;}.reveal-d3{transition-delay:0.3s;}.reveal-d4{transition-delay:0.4s;}
+.reveal-d1{transition-delay:0.1s;}.reveal-d2{transition-delay:0.2s;}.reveal-d3{transition-delay:0.3s;}.reveal-d4{transition-delay:0.4s;}.reveal-d5{transition-delay:0.5s;}
 
 /* PAGE */
 .page{display:none;}.page.active{display:block;}
 
+/* INLINE PAGE HERO (non-home pages) */
+.page-hero{padding:160px 24px 80px;text-align:center;position:relative;overflow:hidden;}
+.page-hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(109,40,217,0.15) 0%,transparent 60%);}
+.page-hero h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(48px,7vw,80px);letter-spacing:3px;line-height:1.0;position:relative;z-index:1;}
+.page-hero p{font-size:17px;color:rgba(255,255,255,0.5);max-width:620px;margin:20px auto 0;line-height:1.75;position:relative;z-index:1;}
+
+/* SPLIT SECTION */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;}
+.split.reverse{direction:rtl;}.split.reverse > *{direction:ltr;}
+.split-text .overline{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:4px;color:var(--green-neon);margin-bottom:16px;}
+.split-text h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(36px,4vw,52px);letter-spacing:2px;line-height:1.05;margin-bottom:20px;}
+.split-text p{font-size:15px;color:rgba(255,255,255,0.55);line-height:1.8;margin-bottom:16px;}
+.split-visual{border-radius:24px;overflow:hidden;}
+
 /* RESPONSIVE */
+@media(max-width:960px){
+  .split,.split.reverse{grid-template-columns:1fr;direction:ltr;}
+  .split.reverse{direction:ltr;}
+}
 @media(max-width:768px){
-  .navbar{padding:0 16px;}.nav-links{display:none;}.nav-links.open{display:flex;position:absolute;top:72px;left:0;right:0;flex-direction:column;background:rgba(6,2,15,0.98);padding:24px;gap:16px;border-bottom:1px solid rgba(139,92,246,0.1);}.hamburger{display:flex;}.btn-primary.desk{display:none;}
-  .hero-h1{font-size:clamp(32px,10vw,48px);line-height:1.05;}.section-title{font-size:32px;}.steps-grid{grid-template-columns:1fr;}
-  .footer-inner{flex-direction:column;text-align:center;}.section-pad{padding:80px 16px;}
-  body::after{display:none;}
-  /* Override all inline 3-col grids */
+  .navbar{padding:0 16px;}.nav-links{display:none;}.nav-links.open{display:flex;position:absolute;top:72px;left:0;right:0;flex-direction:column;background:rgba(6,2,15,0.98);padding:24px;gap:4px;border-bottom:1px solid rgba(139,92,246,0.1);max-height:80vh;overflow-y:auto;}.hamburger{display:flex;}.btn-primary.desk{display:none;}
+  .nav-dropdown{position:static;}.dropdown-menu{position:static;transform:none;display:none;box-shadow:none;border:none;background:rgba(139,92,246,0.05);border-radius:8px;margin:4px 0;}
+  .nav-dropdown.mobile-open .dropdown-menu{display:flex;}
+  .hero-h1{font-size:clamp(44px,12vw,64px);}.section-title{font-size:32px;}.steps-grid{grid-template-columns:1fr;}
+  .footer-inner{flex-direction:column;}.section-pad{padding:80px 16px;}.page-hero{padding:120px 16px 60px;}
   [style*="grid-template-columns:repeat(3,1fr)"]{grid-template-columns:1fr!important;}
-  /* Override 4-col stats grid → 2x2 */
   [style*="grid-template-columns:repeat(4,1fr)"]{grid-template-columns:repeat(2,1fr)!important;}
-  /* Override 2-col athletes grid */
   [style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr!important;}
-  /* Hero pills wrap on small screens */
   .hero-pills{flex-wrap:wrap;justify-content:center;gap:8px;}
-  .hero-content{padding:0 4px;}
-  /* Card padding reduction */
-  .glow-card{padding:24px 20px;}
-  /* Contact section phone number */
-  .section-pad [style*="font-size:36px"]{font-size:clamp(22px,7vw,36px)!important;}
+  body::after{display:none;}
+  .feature-row{grid-template-columns:1fr;}
 }
 @media(max-width:420px){
-  .hero-h1{font-size:30px;}
-  .section-title{font-size:28px;}
-  .stat-big{font-size:clamp(32px,10vw,52px);}
-  .navbar-logo{font-size:22px;}
+  .hero-h1{font-size:40px;}.section-title{font-size:28px;}.stat-big{font-size:42px;}
 }
 </style>
 </head>
@@ -191,163 +240,442 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;o
 <!-- NAVBAR -->
 <nav class="navbar" id="navbar">
   <div class="nav-left">
-    <a class="navbar-logo" onclick="nav('home')">TAPNPAY<span>+</span></a>
+    <a class="navbar-logo" onclick="nav('home')" style="cursor:pointer;">TAPNPAY<span>+</span></a>
   </div>
   <div class="nav-links" id="navLinks">
-    <a onclick="nav('home')" id="nav-home" class="active">Home</a>
-    <a onclick="nav('athletes')" id="nav-athletes">Athletes</a>
-    <a onclick="nav('licensing')" id="nav-licensing">Licensing</a>
+    <a onclick="nav('home')" id="nav-home">Home</a>
+    <a onclick="nav('rewards')" id="nav-rewards">Rewards</a>
+    <div class="nav-dropdown" id="athletesDropdown">
+      <a id="nav-athletes" style="display:flex;align-items:center;gap:4px;">Athletes<span class="nav-chevron">&#9660;</span></a>
+      <div class="dropdown-menu">
+        <a href="https://nil.tapnpayplus.com" target="_blank">College NIL</a>
+        <a href="https://impact.tapnpayplus.com" target="_blank">High School</a>
+      </div>
+    </div>
+    <a onclick="nav('impact')" id="nav-impact">Impact Options</a>
+    <a onclick="nav('strategic')" id="nav-strategic">Strategic Partners</a>
     <a onclick="nav('merchants')" id="nav-merchants">Merchants</a>
-    <a onclick="nav('faqs')" id="nav-faqs">FAQs</a>
-    <a onclick="nav('contact')" id="nav-contact">Contact</a>
+    <div class="nav-dropdown" id="moreDropdown">
+      <a style="display:flex;align-items:center;gap:4px;">More<span class="nav-chevron">&#9660;</span></a>
+      <div class="dropdown-menu">
+        <a onclick="nav('about');closeNav();" id="nav-about">About Us</a>
+        <a onclick="nav('faqs');closeNav();" id="nav-faqs">FAQs</a>
+        <a onclick="nav('contact');closeNav();" id="nav-contact">Contact Us</a>
+      </div>
+    </div>
   </div>
-  <a onclick="nav('contact')" class="btn-primary desk">Get Started</a>
-  <div class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')"><span></span><span></span><span></span></div>
+  <a onclick="nav('contact')" class="btn-primary desk" style="font-size:11px;padding:9px 20px;">Get Started</a>
+  <div class="hamburger" id="hamburger" onclick="toggleNav()"><span></span><span></span><span></span></div>
 </nav>
 
 <!-- ==================== HOME ==================== -->
 <div class="page active" id="page-home">
-
 <section class="hero">
   <div class="hero-mesh"></div>
   <div class="hero-grid" id="heroGrid"></div>
   <div class="hero-orbs"><div class="orb orb-1"></div><div class="orb orb-2"></div><div class="orb orb-3"></div></div>
   <div class="particles" id="particles"></div>
   <div class="hero-content" id="heroContent">
-    <div class="hero-eyebrow"><span class="live-dot"></span> Fan Payment Platform</div>
-    <h1 class="hero-h1">EVERY COMMUNITY<br>HAS FANS.<br><span class="gradient-text">TAPNPAY+ GIVES<br>THEM A HOME.</span></h1>
-    <p class="hero-sub">TapNPay+ is the mobile app where every fan's daily purchases count for the programs, teams, and athletes they love and rally around.</p>
+    <div class="hero-eyebrow"><span class="live-dot"></span> Cash Back Impact App</div>
+    <h1 class="hero-h1">SHOP.<br>EARN.<br>SUPPORT...<br><span class="gradient-text">EVERY DAY!</span></h1>
+    <p class="hero-sub">Download, shop, and earn unlimited instant cash back on everyday purchases, while directly impacting your group!</p>
     <div class="hero-pills">
-      <div class="pill"><strong>300+</strong> Brand Partners</div>
+      <div class="pill"><strong>300+</strong> National Brands</div>
       <div class="pill"><strong>4%</strong> Avg Cash Back</div>
-      <div class="pill"><strong>Instant</strong> Rewards</div>
+      <div class="pill"><strong>$0</strong> Extra Cost to Fans</div>
     </div>
-    <div class="hero-cta">
-      <a onclick="nav('contact')" class="btn-primary" style="font-size:16px;padding:16px 44px;cursor:pointer;">GET STARTED</a>
+    <div class="hero-cta" style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+      <a onclick="nav('rewards')" class="btn-primary" style="font-size:15px;padding:14px 40px;cursor:pointer;">LEARN MORE</a>
+      <a onclick="nav('contact')" class="btn-secondary" style="font-size:15px;padding:14px 40px;cursor:pointer;">GET STARTED</a>
     </div>
   </div>
 </section>
 
-<!-- HOW IT WORKS -->
+<!-- REWARDS MADE SIMPLE -->
+<section class="section-pad" style="background:rgba(14,8,34,0.5);">
+  <div class="container">
+    <div class="split">
+      <div class="split-text reveal">
+        <div class="overline">Rewards Program</div>
+        <h2>REWARDS PROGRAM MADE SIMPLE!</h2>
+        <p>The TapNPay+ Cash Back Impact App is simple, easy to use, and rewards members with something they love — UNLIMITED INSTANT CASH BACK, averaging 4% on every purchase!</p>
+        <p>With exclusive access to 300+ national brands, our membership provides daily impact and continuous support to your group, while giving you access to unlimited instant cash back!</p>
+        <p>With Rewards built in, it's a seamless way to shop, earn, and make an impact every day.</p>
+        <a onclick="nav('rewards')" class="btn-primary" style="margin-top:8px;font-size:13px;cursor:pointer;">EXPLORE REWARDS</a>
+      </div>
+      <div class="reveal reveal-d2" style="display:flex;flex-direction:column;gap:20px;">
+        <div class="glow-card" style="text-align:center;">
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:64px;color:var(--green-neon);line-height:1;">4%</div>
+          <div style="font-size:14px;color:rgba(255,255,255,0.5);margin-top:4px;">Average Unlimited Instant Cash Back</div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+          <div class="step-card" style="text-align:center;padding:24px;">
+            <div style="font-family:'Bebas Neue',sans-serif;font-size:40px;color:var(--purple-bright);line-height:1;"><span class="counter" data-target="300">0</span>+</div>
+            <div style="font-size:12px;color:rgba(255,255,255,0.4);margin-top:4px;">National Brands</div>
+          </div>
+          <div class="step-card" style="text-align:center;padding:24px;">
+            <div style="font-family:'Bebas Neue',sans-serif;font-size:40px;color:var(--purple-bright);line-height:1;">24/7</div>
+            <div style="font-size:12px;color:rgba(255,255,255,0.4);margin-top:4px;">Customer Care</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- HOW TAPNPAY+ WORKS VIDEO -->
 <section class="section-pad">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label reveal">Explainer</div>
+      <h2 class="section-title reveal">HOW TAPNPAY+ WORKS</h2>
+      <p class="section-subtitle reveal">See exactly how members shop, earn instant cash back, and generate direct impact for their group — every single day.</p>
+    </div>
+    <div class="video-frame reveal" style="max-width:800px;margin:0 auto;" data-ghl-video="slot-1">
+      <!--
+        VIDEO SLOT 1 — "How TapNPay+ Works"
+        To activate: replace the .video-placeholder-ui div below with:
+        <iframe src="YOUR_GHL_VIDEO_URL" allowfullscreen allow="autoplay"></iframe>
+        Then remove the .video-placeholder-ui div entirely.
+      -->
+      <div class="video-inner">
+        <div class="video-placeholder-ui">
+          <div class="video-play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+          <div class="video-label">HOW DO YOU PLAN TO<br>KEEP FUNDING YOUR GROUP?</div>
+          <div class="video-sublabel">Video — provided via GHL</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BRAND PARTNERS -->
+<section class="brands-section">
+  <div class="section-header" style="margin-bottom:32px;">
+    <div class="section-label reveal">Partner Network</div>
+    <h2 class="section-title reveal">300+ NATIONAL BRAND PARTNERS</h2>
+  </div>
+  <div class="marquee-container"><div class="logo-marquee" id="hrow1"></div></div>
+  <div class="marquee-container"><div class="logo-marquee reverse" id="hrow2"></div></div>
+  <div class="marquee-container"><div class="logo-marquee slow" id="hrow3"></div></div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- WHAT USERS ARE SAYING VIDEO -->
+<section class="section-pad" style="background:rgba(14,8,34,0.5);">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label reveal">Testimonials</div>
+      <h2 class="section-title reveal">WHAT OUR USERS ARE SAYING</h2>
+      <p class="section-subtitle reveal">Real athletes, real schools, real impact — hear directly from the communities TapNPay+ is changing.</p>
+    </div>
+    <div class="video-frame reveal" style="max-width:800px;margin:0 auto;" data-ghl-video="slot-2">
+      <!--
+        VIDEO SLOT 2 — "What Our Users Are Saying"
+        To activate: replace the .video-placeholder-ui div below with:
+        <iframe src="YOUR_GHL_VIDEO_URL" allowfullscreen allow="autoplay"></iframe>
+        Then remove the .video-placeholder-ui div entirely.
+      -->
+      <div class="video-inner">
+        <div class="video-placeholder-ui">
+          <div class="video-play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+          <div class="video-label">STUDENT ATHLETES<br>SHARE THEIR STORY</div>
+          <div class="video-sublabel">Video — provided via GHL</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LET'S MAKE THIS EASY -->
+<section class="section-pad">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title reveal">LET'S MAKE THIS EASY...</h2>
+      <p class="section-subtitle reveal">TapNPay+ handles everything so your group can focus on what matters most.</p>
+    </div>
+    <div class="feature-row reveal">
+      <div class="feature-item">
+        <div class="feature-icon">🏆</div>
+        <div class="feature-text">
+          <h4>We Handle Everything</h4>
+          <p>The TapNPay+ app supports your group with built-in communication tools, social media content, updates on new offers, world-class 24/7 customer care, and reminders that keep members engaged all year long.</p>
+        </div>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon">🐷</div>
+        <div class="feature-text">
+          <h4>Membership</h4>
+          <p>Our membership provides daily impact and continuous support to your group, while giving you access to an average of 4% unlimited instant cash back at 300+ national brands!</p>
+        </div>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon">👌</div>
+        <div class="feature-text">
+          <h4>Just Sign Up!</h4>
+          <p>All you have to do is fill out the form below, and one of our coaches will reach out within 24 hours to get your program up and running. It's that easy!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOME CONTACT FORM -->
+<section class="section-pad" style="background:rgba(14,8,34,0.5);">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label reveal">Get Started</div>
+      <h2 class="section-title reveal">LEARN MORE</h2>
+      <p class="section-subtitle reveal">Contact us today and start earning cash back by tomorrow!</p>
+    </div>
+    <div class="contact-form reveal" id="home-form">
+      <div class="form-group"><input type="text" id="hf-name" placeholder="Your name *"></div>
+      <div class="form-group"><input type="tel" id="hf-phone" placeholder="Phone number *"></div>
+      <div class="form-group"><input type="email" id="hf-email" placeholder="Email address *"></div>
+      <div class="form-group"><input type="text" id="hf-group" placeholder="Group / Organization name *"></div>
+      <button type="button" class="form-submit" onclick="submitForm('home')">SEND MESSAGE</button>
+      <div class="form-success" id="home-success">✓ Thanks for reaching out! We'll be in touch within 24 hours.</div>
+    </div>
+  </div>
+</section>
+</div>
+
+<!-- ==================== REWARDS ==================== -->
+<div class="page" id="page-rewards">
+<section class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="section-label reveal">Rewards Program</div>
+  <h1 class="reveal">REWARDS PROGRAM<br><span class="gradient-text">MADE SIMPLE!</span></h1>
+  <p class="reveal">The TapNPay+ Cash Back Impact App rewards you with an average of 4% unlimited instant cash back at 300+ national brands — while impacting your group every day.</p>
+</section>
+
+<section class="section-pad" style="background:rgba(14,8,34,0.5);">
+  <div class="container">
+    <div class="split reveal">
+      <div class="split-text">
+        <div class="overline">How It Works</div>
+        <h2>SHOP. EARN. SUPPORT.</h2>
+        <p>Tired of car washes, coupon books, and time-consuming fundraising programs? TapNPay+ makes it simple with our Cash Back Impact App.</p>
+        <p>Our membership provides daily impact and continuous support to your group, while giving you access to unlimited instant cash back at 300+ national brands. Members earn an average of 4% UNLIMITED INSTANT cash back on everyday purchases, while a portion of each transaction also impacts their group — at no extra cost.</p>
+      </div>
+      <div style="display:grid;gap:16px;" class="reveal reveal-d2">
+        <div class="glow-card" style="background:linear-gradient(135deg,rgba(0,230,118,0.06),rgba(14,8,34,0.9));">
+          <div class="section-label" style="margin-bottom:8px;">Step 1</div>
+          <h3>Download TapNPay+</h3>
+          <p>Free on iPhone and Android. Set up in 60 seconds with your group's unique code.</p>
+        </div>
+        <div class="glow-card" style="background:linear-gradient(135deg,rgba(139,92,246,0.06),rgba(14,8,34,0.9));">
+          <div class="section-label" style="margin-bottom:8px;color:var(--purple-bright);">Step 2</div>
+          <h3>Shop 300+ Brands</h3>
+          <p>Purchase digital gift cards at the brands you already love — in-store, online, and restaurants nationwide.</p>
+        </div>
+        <div class="glow-card" style="background:linear-gradient(135deg,rgba(0,230,118,0.06),rgba(14,8,34,0.9));">
+          <div class="section-label" style="margin-bottom:8px;">Step 3</div>
+          <h3>Earn Instant Cash Back</h3>
+          <p>Get an average of 4% instant cash back on every purchase. Applied immediately — not quarterly like Rakuten.</p>
+        </div>
+        <div class="glow-card" style="background:linear-gradient(135deg,rgba(139,92,246,0.06),rgba(14,8,34,0.9));">
+          <div class="section-label" style="margin-bottom:8px;color:var(--purple-bright);">Step 4</div>
+          <h3>Support Your Group</h3>
+          <p>Every payment automatically generates impact for the team, school, or athlete you care about.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="brands-section">
+  <div class="section-header" style="margin-bottom:32px;">
+    <div class="section-label reveal">Partner Network</div>
+    <h2 class="section-title reveal">300+ BRANDS. REAL EARNINGS.</h2>
+  </div>
+  <div class="marquee-container"><div class="logo-marquee" id="rrow1"></div></div>
+  <div class="marquee-container"><div class="logo-marquee reverse" id="rrow2"></div></div>
+  <div class="marquee-container"><div class="logo-marquee slow" id="rrow3"></div></div>
+</section>
+
+<section class="section-pad" style="background:rgba(14,8,34,0.5);">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:center;" class="reveal">
+      <div><div class="stat-big">4%</div><p style="font-size:14px;color:rgba(255,255,255,0.4);margin-top:8px;">Avg Cash Back</p></div>
+      <div><div class="stat-big"><span class="counter" data-target="300">0</span>+</div><p style="font-size:14px;color:rgba(255,255,255,0.4);margin-top:8px;">Brand Partners</p></div>
+      <div><div class="stat-big">24/7</div><p style="font-size:14px;color:rgba(255,255,255,0.4);margin-top:8px;">Customer Care</p></div>
+      <div><div class="stat-big">$0</div><p style="font-size:14px;color:rgba(255,255,255,0.4);margin-top:8px;">Extra Cost to Fans</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section-pad">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label reveal">Get Started</div>
+      <h2 class="section-title reveal">LEARN MORE</h2>
+      <p class="section-subtitle reveal">Fill out this form and our team will contact you within 24 hours.</p>
+    </div>
+    <div class="contact-form reveal">
+      <div class="form-group"><input type="text" id="rf-name" placeholder="Your name *"></div>
+      <div class="form-group"><input type="tel" id="rf-phone" placeholder="Phone number *"></div>
+      <div class="form-group"><input type="email" id="rf-email" placeholder="Email address *"></div>
+      <div class="form-group"><input type="text" id="rf-group" placeholder="Group / Organization name *"></div>
+      <button type="button" class="form-submit" onclick="submitForm('rewards')">SEND MESSAGE</button>
+      <div class="form-success" id="rewards-success">✓ Thanks! We'll be in touch within 24 hours.</div>
+    </div>
+  </div>
+</section>
+</div>
+
+<!-- ==================== IMPACT OPTIONS ==================== -->
+<div class="page" id="page-impact">
+<section class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="section-label reveal">Who It's For</div>
+  <h1 class="reveal">IMPACT OPTIONS</h1>
+  <p class="reveal">TapNPay+ was built for the groups, programs, and organizations that power our communities. The program supports everyone from student athletes and schools to youth teams and partners.</p>
+</section>
+
+<section class="section-pad" style="background:rgba(14,8,34,0.5);">
   <div class="container">
     <div class="section-header">
       <div class="section-label reveal">How It Works</div>
-      <h2 class="section-title reveal">SHOP. EARN.<br>SUPPORT... EVERY DAY!</h2>
-      <p class="section-subtitle reveal">Download, shop, and earn unlimited instant cash back on everyday purchases, while directly impacting your group!</p>
+      <h2 class="section-title reveal">WHO IT'S FOR</h2>
+      <p class="section-subtitle reveal">Through the TapNPay+ Cash Back Impact App, members shop at 300+ national retailers and earn an average of 4% unlimited instant cash back. Each transaction not only rewards the shopper, but also sends a portion of those rewards directly back to their chosen group or program.</p>
     </div>
-    <div class="steps-grid">
-      <div class="step-card reveal"><div class="step-number">1</div><h3>Download TapNPay+</h3><p>Free on iPhone and Android. Set up in 60 seconds with your group's unique code.</p></div>
-      <div class="step-card reveal reveal-d1"><div class="step-number">2</div><h3>Shop 300+ Brands</h3><p>Purchase digital gift cards at the brands you already love — in-store and online.</p></div>
-      <div class="step-card reveal reveal-d2"><div class="step-number">3</div><h3>Earn Instant Cash Back</h3><p>Get an average of 4% instant cash back on every purchase. Applied immediately.</p></div>
-      <div class="step-card reveal reveal-d3"><div class="step-number">4</div><h3>Support Your Group</h3><p>Every payment automatically generates impact for the team, school, or athlete you care about.</p></div>
-    </div>
-  </div>
-</section>
-
-<div class="section-divider"></div>
-
-<!-- WHO IT'S FOR -->
-<section class="section-pad" style="background:rgba(14,8,34,0.4);">
-  <div class="container">
-    <div class="section-header">
-      <div class="section-label reveal">Who It's For</div>
-      <h2 class="section-title reveal">ONE PLATFORM.<br>EVERY FAN.</h2>
-    </div>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;">
-      <div class="glow-card reveal" style="text-align:center;">
-        <div style="font-size:48px;margin-bottom:16px;">🏈</div>
-        <h3>Athletes</h3>
-        <p>NIL athletes earn real revenue from their fan network — every membership, every purchase, every day.</p>
-        <a onclick="nav('athletes')" style="display:inline-block;margin-top:16px;color:var(--green-neon);font-weight:600;font-size:14px;text-decoration:none;cursor:pointer;">Learn More →</a>
-      </div>
-      <div class="glow-card reveal reveal-d1" style="text-align:center;">
-        <div style="font-size:48px;margin-bottom:16px;">👥</div>
-        <h3>Fans &amp; Supporters</h3>
-        <p>Shop at 300+ brands you already use. Earn instant cash back. Every purchase directly supports the athlete or team you love.</p>
-      </div>
-      <div class="glow-card reveal reveal-d2" style="text-align:center;">
-        <div style="font-size:48px;margin-bottom:16px;">🏫</div>
-        <h3>Organizations</h3>
-        <p>Schools, teams, non-profits — license TapNPay+ as a perk/reward platform and turn everyday purchases into revenue.</p>
-        <a onclick="nav('licensing')" style="display:inline-block;margin-top:16px;color:var(--green-neon);font-weight:600;font-size:14px;text-decoration:none;cursor:pointer;">Learn More →</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="section-divider"></div>
-
-<!-- STATS -->
-<section class="section-pad">
-  <div class="container">
-    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:center;">
-      <div class="reveal"><div class="stat-big"><span class="counter" data-target="300">0</span>+</div><p style="font-size:14px;color:rgba(255,255,255,0.4);margin-top:8px;">Brand Partners</p></div>
-      <div class="reveal reveal-d1"><div class="stat-big">4%</div><p style="font-size:14px;color:rgba(255,255,255,0.4);margin-top:8px;">Avg Cash Back</p></div>
-      <div class="reveal reveal-d2"><div class="stat-big">24/7</div><p style="font-size:14px;color:rgba(255,255,255,0.4);margin-top:8px;">Customer Care</p></div>
-      <div class="reveal reveal-d3"><div class="stat-big">$0</div><p style="font-size:14px;color:rgba(255,255,255,0.4);margin-top:8px;">Extra Cost to Fans</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- BRANDS -->
-<section class="brands-section">
-  <div class="section-header"><div class="section-label reveal">Partner Network</div><h2 class="section-title reveal">300+ BRANDS. REAL EARNINGS.</h2></div>
-  <div class="marquee-container"><div class="logo-marquee" id="row1"></div></div>
-  <div class="marquee-container"><div class="logo-marquee reverse" id="row2"></div></div>
-  <div class="marquee-container"><div class="logo-marquee slow" id="row3"></div></div>
-</section>
-
-<div class="section-divider"></div>
-
-<!-- CTA -->
-<section class="section-pad" style="text-align:center;position:relative;overflow:hidden;">
-  <div style="position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(0,230,118,0.04) 0%,transparent 60%);"></div>
-  <div class="container" style="position:relative;z-index:2;">
-    <div class="section-header"><h2 class="section-title reveal">READY TO GET STARTED?</h2><p class="section-subtitle reveal">Contact us today and start earning cash back by tomorrow!</p></div>
-    <a onclick="nav('contact')" class="btn-primary reveal" style="font-size:16px;padding:16px 44px;cursor:pointer;">CONTACT US</a>
-  </div>
-</section>
-</div>
-
-<!-- ==================== ATHLETES ==================== -->
-<div class="page" id="page-athletes">
-<section class="section-pad" style="padding-top:140px;">
-  <div class="container">
-    <div class="section-header"><div class="section-label reveal">For Athletes</div><h2 class="section-title reveal">YOUR NAME. YOUR BRAND.<br>YOUR EARNINGS.</h2><p class="section-subtitle reveal">Whether you're a college athlete earning NIL revenue or a high school athlete building community impact, TapNPay+ is built for you.</p></div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;">
+    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:28px;">
       <div class="glow-card reveal">
-        <div style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:3px;color:var(--green-neon);margin-bottom:16px;">College NIL</div>
-        <h3>Earn NIL Revenue Every Day</h3>
-        <p>Your fans pay for things every day. TapNPay+ turns that shopping into real earnings. Earn 70% of fan activations plus 10% of ongoing cash back. NCAA compliant. No endorsement required.</p>
-        <a href="https://nil.tapnpayplus.com" class="btn-primary" style="margin-top:24px;font-size:12px;">EXPLORE NIL PROGRAM</a>
+        <div style="font-size:40px;margin-bottom:16px;">📚</div>
+        <div class="section-label" style="margin-bottom:8px;">K-12 Schools</div>
+        <h3>K-12 Schools</h3>
+        <p>TapNPay+ gives school districts a simple, no-selling way to generate year-round support through everyday shopping. Families join with a low-cost annual membership and earn unlimited instant cash back, while a portion of each purchase directly supports classrooms, clubs, and student programs.</p>
+        <a onclick="nav('contact')" class="btn-secondary" style="margin-top:20px;font-size:12px;cursor:pointer;">LEARN MORE</a>
       </div>
       <div class="glow-card reveal reveal-d1">
-        <div style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:3px;color:var(--purple-bright);margin-bottom:16px;">High School Impact</div>
-        <h3>Build Community Support</h3>
-        <p>Rally your community around your program. Parents, family, and fans earn cash back while every purchase generates direct funding for your team — no fundraising burnout.</p>
-        <a href="https://impact.tapnpayplus.com" class="btn-secondary" style="margin-top:24px;font-size:12px;">EXPLORE HS IMPACT</a>
+        <div style="font-size:40px;margin-bottom:16px;">🎓</div>
+        <div class="section-label" style="margin-bottom:8px;color:var(--purple-bright);">College Athletics</div>
+        <h3>College Athletics</h3>
+        <p>TapNPay+ empowers college athletic programs to generate daily revenue with zero selling or fundraising. Supporters join through a unique link, and every purchase sends funds back to the program, creating ongoing impact for teams and departments year-round.</p>
+        <a href="https://nil.tapnpayplus.com" target="_blank" class="btn-primary" style="margin-top:20px;font-size:12px;">EXPLORE COLLEGE NIL</a>
       </div>
+      <div class="glow-card reveal">
+        <div style="font-size:40px;margin-bottom:16px;">🏈</div>
+        <div class="section-label" style="margin-bottom:8px;">Youth Sports</div>
+        <h3>Youth Sports</h3>
+        <p>TapNPay+ makes it easy for youth sports teams to fund their season without selling or setup. Families and fans earn cash back on everyday purchases, while each transaction helps cover uniforms, travel, and more — turning shopping into support all season long.</p>
+        <a onclick="nav('contact')" class="btn-secondary" style="margin-top:20px;font-size:12px;cursor:pointer;">LEARN MORE</a>
+      </div>
+      <div class="glow-card reveal reveal-d1">
+        <div style="font-size:40px;margin-bottom:16px;">🏢</div>
+        <div class="section-label" style="margin-bottom:8px;color:var(--purple-bright);">Licensing</div>
+        <h3>Licensing</h3>
+        <p>TapNPay+'s technology can be licensed to create custom-branded cash back platforms that reward users while giving back. Every purchase generates unlimited instant cash back for members and direct support for partner organizations — a true win-win built for impact.</p>
+        <a onclick="nav('strategic')" class="btn-primary" style="margin-top:20px;font-size:12px;cursor:pointer;">EXPLORE PARTNERSHIPS</a>
+      </div>
+    </div>
+    <p class="reveal" style="text-align:center;margin-top:40px;font-size:15px;color:rgba(255,255,255,0.4);">TapNPay+ makes it easy to create ongoing support, no selling, no setup — just meaningful rewards that make a difference every day.</p>
+  </div>
+</section>
+
+<section class="section-pad" style="background:rgba(14,8,34,0.5);">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label reveal">Contact</div>
+      <h2 class="section-title reveal">LEARN MORE</h2>
+      <p class="section-subtitle reveal">Fill out this form and our team will contact you within 24 hours.</p>
+    </div>
+    <div class="contact-form reveal">
+      <div class="form-group"><input type="text" id="if-name" placeholder="Your name *"></div>
+      <div class="form-group"><input type="tel" id="if-phone" placeholder="Phone number *"></div>
+      <div class="form-group"><input type="email" id="if-email" placeholder="Email address *"></div>
+      <div class="form-group"><input type="text" id="if-group" placeholder="Group / Organization name *"></div>
+      <button type="button" class="form-submit" onclick="submitForm('impact')">SEND MESSAGE</button>
+      <div class="form-success" id="impact-success">✓ Thanks! We'll be in touch within 24 hours.</div>
     </div>
   </div>
 </section>
 </div>
 
-<!-- ==================== LICENSING ==================== -->
-<div class="page" id="page-licensing">
-<section class="section-pad" style="padding-top:140px;">
+<!-- ==================== STRATEGIC PARTNERS ==================== -->
+<div class="page" id="page-strategic">
+<section class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="section-label reveal">Partnerships</div>
+  <h1 class="reveal">STRATEGIC PARTNERSHIPS<br><span class="gradient-text">THAT EXPAND IMPACT</span></h1>
+  <p class="reveal">TapNPay+ partners with organizations and platforms to make it easier for communities to support the groups they care about through everyday shopping.</p>
+</section>
+
+<section class="section-pad" style="background:rgba(14,8,34,0.5);">
   <div class="container">
-    <div class="section-header"><div class="section-label reveal">Licensing</div><h2 class="section-title reveal">LICENSE TAPNPAY+<br>FOR YOUR ORGANIZATION</h2><p class="section-subtitle reveal">TapNPay+ technology is available for licensing as a perk/reward platform — perfect for organizations, non-profits, and anyone outside the athletics space.</p></div>
-    <div class="steps-grid" style="grid-template-columns:repeat(3,1fr);">
-      <div class="glow-card reveal"><h3 style="color:var(--green-neon);">White-Label Ready</h3><p>Deploy TapNPay+ under your own brand. Custom branding, custom onboarding, same powerful 300+ brand partner network.</p></div>
-      <div class="glow-card reveal reveal-d1"><h3 style="color:var(--green-neon);">Revenue Generation</h3><p>Turn everyday purchases into sustainable revenue. Members earn cash back while your organization earns on every transaction.</p></div>
-      <div class="glow-card reveal reveal-d2"><h3 style="color:var(--green-neon);">Turnkey Deployment</h3><p>We handle everything — the app, communication tools, updates, and world-class 24/7 customer care. You focus on your mission.</p></div>
+    <div class="section-header">
+      <div class="section-label reveal">How It Works</div>
+      <h2 class="section-title reveal">HOW PARTNERSHIPS WORK</h2>
     </div>
-    <div style="margin-top:48px;text-align:center;" class="reveal"><a onclick="nav('contact')" class="btn-primary" style="font-size:15px;padding:14px 36px;cursor:pointer;">CONTACT US TO LEARN MORE</a></div>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:64px;">
-      <div class="step-card reveal" style="text-align:center;"><h3>Non-Profits</h3><p>Replace one-time fundraisers with year-round revenue from everyday purchases.</p></div>
-      <div class="step-card reveal reveal-d1" style="text-align:center;"><h3>Schools &amp; Universities</h3><p>Engage your community with a rewards platform that generates continuous funding.</p></div>
-      <div class="step-card reveal reveal-d2" style="text-align:center;"><h3>Corporate Perks</h3><p>Offer employees instant cash back at 300+ brands as a unique benefits platform.</p></div>
+    <div class="split reveal">
+      <div class="split-text">
+        <p>TapNPay+ transforms everyday purchases into year-round support for organizations. Through strategic partnerships, we integrate TapNPay+ into communities, platforms, and networks that already bring people together.</p>
+        <p style="margin-top:16px;">Supporters simply:</p>
+        <div style="margin-top:12px;display:flex;flex-direction:column;gap:10px;">
+          <div style="display:flex;align-items:center;gap:12px;"><span style="color:var(--green-neon);font-size:18px;">✓</span><span style="color:rgba(255,255,255,0.7);">Shop at 300+ national brands</span></div>
+          <div style="display:flex;align-items:center;gap:12px;"><span style="color:var(--green-neon);font-size:18px;">✓</span><span style="color:rgba(255,255,255,0.7);">Earn unlimited instant cash back</span></div>
+          <div style="display:flex;align-items:center;gap:12px;"><span style="color:var(--green-neon);font-size:18px;">✓</span><span style="color:rgba(255,255,255,0.7);">Automatically support the organizations they care about</span></div>
+        </div>
+        <p style="margin-top:20px;">For partners, TapNPay+ adds meaningful value to their network by creating a simple, scalable way for communities to support organizations through everyday purchases. There's no selling, no extra effort, and no complicated setup.</p>
+      </div>
+      <div class="reveal reveal-d2" style="display:flex;flex-direction:column;gap:20px;">
+        <div class="glow-card" style="text-align:center;">
+          <div style="font-size:40px;margin-bottom:16px;">🤝</div>
+          <h3>No Selling Required</h3>
+          <p>Partners introduce TapNPay+ to their existing communities. No door-to-door, no pressure, no complicated setup.</p>
+        </div>
+        <div class="glow-card" style="text-align:center;">
+          <div style="font-size:40px;margin-bottom:16px;">📈</div>
+          <h3>Scalable Impact</h3>
+          <p>Every new member amplifies impact. The more people who shop, the more support flows back to the organizations they care about.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CIVIC CHAMPS CASE STUDY -->
+<section class="section-pad">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label reveal">Our Partners</div>
+      <h2 class="section-title reveal">STRATEGIC PARTNERS</h2>
+    </div>
+    <div class="partner-card reveal" style="max-width:800px;margin:0 auto;">
+      <div style="display:flex;align-items:flex-start;gap:24px;flex-wrap:wrap;">
+        <div style="width:72px;height:72px;border-radius:16px;background:rgba(0,230,118,0.08);border:1px solid rgba(0,230,118,0.2);display:flex;align-items:center;justify-content:center;font-size:32px;flex-shrink:0;">🏛️</div>
+        <div style="flex:1;min-width:200px;">
+          <div class="section-label" style="margin-bottom:6px;">Featured Partner</div>
+          <h3 style="font-size:26px;margin-bottom:16px;">Civic Champs</h3>
+          <p style="color:rgba(255,255,255,0.6);line-height:1.75;margin-bottom:12px;">We're proud to partner with Civic Champs, a leading volunteer management platform used by nonprofits nationwide.</p>
+          <p style="color:rgba(255,255,255,0.6);line-height:1.75;margin-bottom:12px;">Civic Champs helps organizations recruit, manage, and engage volunteers more effectively. Through this partnership, supporters now have an additional way to support the groups they care about.</p>
+          <p style="color:rgba(255,255,255,0.6);line-height:1.75;margin-bottom:20px;">With TapNPay+, Civic Champs users can earn unlimited instant cash back while automatically supporting organizations through their everyday purchases. Together, TapNPay+ and Civic Champs are expanding the ways communities can make an impact.</p>
+          <a onclick="nav('contact')" class="btn-primary" style="font-size:12px;cursor:pointer;">LEARN MORE</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-pad" style="background:rgba(14,8,34,0.5);">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label reveal">Partnerships</div>
+      <h2 class="section-title reveal">WANT TO BECOME A<br><span class="gradient-text">STRATEGIC PARTNER?</span></h2>
+      <p class="section-subtitle reveal">Fill out this form and our team will reach out to explore the partnership opportunity.</p>
+    </div>
+    <div class="contact-form reveal">
+      <div class="form-group"><input type="text" id="spf-name" placeholder="Your name *"></div>
+      <div class="form-group"><input type="tel" id="spf-phone" placeholder="Phone number *"></div>
+      <div class="form-group"><input type="email" id="spf-email" placeholder="Email address *"></div>
+      <div class="form-group"><input type="text" id="spf-org" placeholder="Organization name *"></div>
+      <div class="form-group"><input type="text" id="spf-platform" placeholder="Your platform / network (optional)"></div>
+      <button type="button" class="form-submit" onclick="submitForm('strategic')">SEND MESSAGE</button>
+      <div class="form-success" id="strategic-success">✓ Thanks! We'll be in touch within 24 hours.</div>
     </div>
   </div>
 </section>
@@ -355,41 +683,189 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;o
 
 <!-- ==================== MERCHANTS ==================== -->
 <div class="page" id="page-merchants">
-<section class="section-pad" style="padding-top:140px;">
-  <div class="container">
-    <div class="section-header"><div class="section-label reveal">For Merchants</div><h2 class="section-title reveal">300+ NATIONAL BRANDS.<br>REAL PARTNERSHIPS.</h2><p class="section-subtitle reveal">TapNPay+ connects your brand with highly engaged, loyalty-driven consumers who are already buying from you.</p></div>
-  </div>
+<section class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="section-label reveal">Merchant Network</div>
+  <h1 class="reveal">300+ NATIONAL<br><span class="gradient-text">BRAND PARTNERS</span></h1>
+  <p class="reveal">TapNPay+ connects your brand with highly engaged, loyalty-driven consumers who are already buying from you — with zero integration cost.</p>
 </section>
-<section class="brands-section">
+
+<section class="brands-section" style="padding-top:0;">
   <div class="marquee-container"><div class="logo-marquee" id="mrow1"></div></div>
   <div class="marquee-container"><div class="logo-marquee reverse" id="mrow2"></div></div>
   <div class="marquee-container"><div class="logo-marquee slow" id="mrow3"></div></div>
+  <div class="marquee-container"><div class="logo-marquee fast" id="mrow4"></div></div>
+  <div class="marquee-container"><div class="logo-marquee reverse slow" id="mrow5"></div></div>
 </section>
-<section class="section-pad" style="padding-top:40px;">
+
+<section class="section-pad" style="background:rgba(14,8,34,0.5);">
   <div class="container">
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;">
-      <div class="glow-card reveal"><h3 style="color:var(--green-neon);">Drive In-Store Traffic</h3><p>TapNPay+ digital gift cards bring consumers directly to your stores. Instant cash back creates habitual purchasing behavior.</p></div>
-      <div class="glow-card reveal reveal-d1"><h3 style="color:var(--green-neon);">Engaged Customer Base</h3><p>TapNPay+ members are purpose-driven shoppers. They choose your brand because every purchase supports someone they care about.</p></div>
-      <div class="glow-card reveal reveal-d2"><h3 style="color:var(--green-neon);">Zero Integration Cost</h3><p>No technical integration needed. TapNPay+ works through digital gift cards — your existing systems handle the rest.</p></div>
+    <div class="section-header">
+      <div class="section-label reveal">Why TapNPay+</div>
+      <h2 class="section-title reveal">REAL PARTNERSHIPS.<br>REAL RESULTS.</h2>
     </div>
-    <div style="text-align:center;margin-top:48px;" class="reveal"><a onclick="nav('contact')" class="btn-primary" style="font-size:15px;padding:14px 36px;cursor:pointer;">BECOME A MERCHANT PARTNER</a></div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;">
+      <div class="glow-card reveal" style="text-align:center;">
+        <div style="font-size:40px;margin-bottom:16px;">🚶</div>
+        <h3 style="color:var(--green-neon);">Drive In-Store Traffic</h3>
+        <p>TapNPay+ digital gift cards bring consumers directly to your stores. Instant cash back creates habitual purchasing behavior that keeps customers coming back.</p>
+      </div>
+      <div class="glow-card reveal reveal-d1" style="text-align:center;">
+        <div style="font-size:40px;margin-bottom:16px;">❤️</div>
+        <h3 style="color:var(--green-neon);">Engaged Customer Base</h3>
+        <p>TapNPay+ members are purpose-driven shoppers. They choose your brand because every purchase supports someone they care about — that's loyalty you can't buy.</p>
+      </div>
+      <div class="glow-card reveal reveal-d2" style="text-align:center;">
+        <div style="font-size:40px;margin-bottom:16px;">⚡</div>
+        <h3 style="color:var(--green-neon);">Zero Integration Cost</h3>
+        <p>No technical integration needed. TapNPay+ works through digital gift cards — your existing systems handle the rest. Ship it in days, not months.</p>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:48px;" class="reveal">
+      <a onclick="nav('contact')" class="btn-primary" style="font-size:15px;padding:14px 40px;cursor:pointer;">BECOME A MERCHANT PARTNER</a>
+    </div>
+  </div>
+</section>
+</div>
+
+<!-- ==================== ABOUT ==================== -->
+<div class="page" id="page-about">
+<section class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="section-label reveal">Our Story</div>
+  <h1 class="reveal">ABOUT<br><span class="gradient-text">TAPNPAY+</span></h1>
+</section>
+
+<section class="section-pad" style="background:rgba(14,8,34,0.5);">
+  <div class="container" style="max-width:780px;">
+    <div class="section-header">
+      <div class="section-label reveal">Mission</div>
+      <h2 class="section-title reveal">WE MAKE REWARDS<br>MORE MEANINGFUL</h2>
+    </div>
+    <div class="reveal" style="display:flex;flex-direction:column;gap:20px;">
+      <p style="font-size:16px;color:rgba(255,255,255,0.65);line-height:1.85;">TapNPay+ was created to make rewards more meaningful. Instead of outdated sales, coupon books, or door-to-door efforts, TapNPay+ brings communities a modern way to earn cash back every day while making an impact.</p>
+      <p style="font-size:16px;color:rgba(255,255,255,0.65);line-height:1.85;">With one simple membership, get access to the exclusive TapNPay+ Cash Back Impact App, where you can shop at 300+ national brands and earn an average of 4% unlimited instant cash back on your purchases.</p>
+      <p style="font-size:16px;color:rgba(255,255,255,0.65);line-height:1.85;">Here's what makes TapNPay+ different: our membership provides daily impact and continuous support to your group, while giving you access to unlimited instant cash back! It's a true win-win — members save money, while organizations and teams benefit year-round.</p>
+      <p style="font-size:16px;color:rgba(255,255,255,0.65);line-height:1.85;">Whenever a member shops with TapNPay+, a portion of their rewards also flows back to their group, creating an ongoing impact that grows with every purchase. TapNPay+ takes pride in delivering more than just perks — it's a movement that turns everyday shopping into everyday impact.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-pad">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label reveal">The Team</div>
+      <h2 class="section-title reveal">TEAM</h2>
+      <p class="section-subtitle reveal">TapNPay+ is proud to have a dedicated team working together to deliver a rewards program that creates real impact for both members and groups.</p>
+    </div>
+    <div class="reveal" style="max-width:780px;margin:0 auto;">
+      <div class="glow-card">
+        <p style="font-size:15px;color:rgba(255,255,255,0.6);line-height:1.85;margin-bottom:16px;">Our collaborative approach ensures every part of the TapNPay+ experience — from the app itself to community partnerships — runs smoothly and delivers value.</p>
+        <p style="font-size:15px;color:rgba(255,255,255,0.6);line-height:1.85;">Management focuses on the operation as a whole, addressing Product Development, User Experience, Marketing, Community Relations, and Customer Support. Our goal is to constantly improve the platform and ensure both members and organizations get maximum value from every interaction.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-pad" style="background:rgba(14,8,34,0.5);">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;text-align:center;">
+      <div class="step-card reveal" style="text-align:center;">
+        <div style="font-size:48px;margin-bottom:16px;">📱</div>
+        <h3>Product Development</h3>
+        <p>Constantly improving the TapNPay+ app experience for both members and organizations.</p>
+      </div>
+      <div class="step-card reveal reveal-d1" style="text-align:center;">
+        <div style="font-size:48px;margin-bottom:16px;">🤝</div>
+        <h3>Community Relations</h3>
+        <p>Building and nurturing partnerships with schools, teams, and organizations nationwide.</p>
+      </div>
+      <div class="step-card reveal reveal-d2" style="text-align:center;">
+        <div style="font-size:48px;margin-bottom:16px;">🎯</div>
+        <h3>Customer Support</h3>
+        <p>World-class 24/7 customer care ensuring every member and partner gets maximum value.</p>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:48px;" class="reveal">
+      <a onclick="nav('contact')" class="btn-primary" style="font-size:15px;padding:14px 40px;cursor:pointer;">GET IN TOUCH</a>
+    </div>
   </div>
 </section>
 </div>
 
 <!-- ==================== FAQS ==================== -->
 <div class="page" id="page-faqs">
-<section class="section-pad" style="padding-top:140px;">
+<section class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="section-label reveal">Support</div>
+  <h1 class="reveal">FREQUENTLY ASKED<br><span class="gradient-text">QUESTIONS</span></h1>
+  <p class="reveal">Everything you need to know about TapNPay+ and how cash back works.</p>
+</section>
+
+<section class="section-pad" style="background:rgba(14,8,34,0.5);">
   <div class="container">
-    <div class="section-header"><div class="section-label reveal">FAQ</div><h2 class="section-title reveal">FREQUENTLY ASKED QUESTIONS</h2></div>
-    <div class="faq-list">
-      <div class="faq-item reveal"><div class="faq-q" onclick="toggleFaq(this)"><span>How do I redeem my cash back?</span><span class="faq-icon">+</span></div><div class="faq-a"><p>Two ways: (1) Apply toward any merchant's digital gift card at checkout, or (2) request a check mailed to your address. Allow 5-7 business days for checks. Requests under $25 have a $5 processing fee.</p></div></div>
-      <div class="faq-item reveal reveal-d1"><div class="faq-q" onclick="toggleFaq(this)"><span>Isn't this just like Rakuten?</span><span class="faq-icon">+</span></div><div class="faq-a"><p>No. TapNPay+ works in-store AND online, at 100s of restaurants, and cash back is instant — not quarterly. Plus, TapNPay+ can be stacked with Rakuten for double rewards.</p></div></div>
-      <div class="faq-item reveal reveal-d2"><div class="faq-q" onclick="toggleFaq(this)"><span>Can I use TapNPay+ with sales and coupons?</span><span class="faq-icon">+</span></div><div class="faq-a"><p>Yes! Use coupons, promo codes, and store sales first, then pay with a TapNPay+ digital gift card to earn cash back on the already-discounted price.</p></div></div>
-      <div class="faq-item reveal reveal-d3"><div class="faq-q" onclick="toggleFaq(this)"><span>Can I have multiple payment methods?</span><span class="faq-icon">+</span></div><div class="faq-a"><p>Yes. Store multiple payment methods in your profile. You can nickname cards for easy reference.</p></div></div>
-      <div class="faq-item reveal"><div class="faq-q" onclick="toggleFaq(this)"><span>How do I check a gift card balance?</span><span class="faq-icon">+</span></div><div class="faq-a"><p>Go to your Wallet and press "Check Balance" next to any digital gift card.</p></div></div>
-      <div class="faq-item reveal reveal-d1"><div class="faq-q" onclick="toggleFaq(this)"><span>Can I buy plastic gift cards with TapNPay+?</span><span class="faq-icon">+</span></div><div class="faq-a"><p>Generally no. Most merchants don't allow digital gift cards to purchase physical gift cards.</p></div></div>
-      <div class="faq-item reveal reveal-d2"><div class="faq-q" onclick="toggleFaq(this)"><span>Forgot to use TapNPay+ — can I still get cash back?</span><span class="faq-icon">+</span></div><div class="faq-a"><p>Unfortunately not. Cash back only applies when digital gift cards are purchased through TapNPay+.</p></div></div>
+    <div class="faq-list reveal">
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)"><span>How do I redeem my cash back?</span><span class="faq-icon">+</span></div>
+        <div class="faq-a">
+          <p>Cash back can be redeemed two ways:</p>
+          <p><strong style="color:var(--green-neon);">1. Apply toward a digital gift card:</strong> Add the gift card to your cart. On the payment screen, click the box that states "Apply Available Cash Back" and complete the order. Your cash back will be deducted from the total. If your gift card is more than your available cash, your selected credit card will be charged for the balance.</p>
+          <p><strong style="color:var(--green-neon);">2. Redeem for a Check:</strong> From the Dashboard, click "Redeem Cash" in the Cash Earned box. Choose "Send Me a Check" and the check will be mailed to the shipping address on the account. Or choose "Send as a Gift" to send it to someone else. Allow 5–7 business days. Reminder: check requests under $25 have a $5 processing fee.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)"><span>Isn't this just like Rakuten?</span><span class="faq-icon">+</span></div>
+        <div class="faq-a">
+          <p>No, not at all. With TapNPay+, you earn cash in stores AND online. Cash back can also be earned at 100s of restaurants nationwide. TapNPay+ cash back is <strong style="color:var(--green-neon);">instant</strong> — not deposited quarterly like Rakuten. And cash back can be applied directly to your next purchase within the app.</p>
+          <p>Best of all, TapNPay+ can be used <strong style="color:var(--green-neon);">alongside Rakuten</strong> for double rewards! Example: shop Under Armour through Rakuten and earn their % back, then pay at checkout with a TapNPay+ digital gift card to stack both rewards.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)"><span>Can I use TapNPay+ with sales and coupons?</span><span class="faq-icon">+</span></div>
+        <div class="faq-a">
+          <p>Yes! Smart shoppers maximize coupons, promo codes, and store sales first, then use TapNPay+ to earn cash back on the already-discounted checkout price. Stack your savings.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)"><span>Can I have multiple payment methods on file?</span><span class="faq-icon">+</span></div>
+        <div class="faq-a">
+          <p>Yes. You can store multiple payment methods for buying digital gift cards. Add them in your profile or during checkout by selecting "Save for Later." You can also nickname cards for easy reference.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)"><span>How do I check a gift card balance?</span><span class="faq-icon">+</span></div>
+        <div class="faq-a">
+          <p>Go to your Wallet and press the "Check Balance" button next to any digital gift card to see the current balance. If the option isn't available, the merchant doesn't support balance checks through TapNPay+. In that case, visit the merchant's website or check the instructions on the digital gift card itself.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)"><span>Can I use this to buy plastic gift cards?</span><span class="faq-icon">+</span></div>
+        <div class="faq-a">
+          <p>Generally no. Most merchants do not allow digital gift cards to be used for purchasing physical gift cards. For example, you cannot buy a CVS digital gift card and then use it in-store to purchase plastic gift cards. Some merchants also restrict other purchase types — check with the merchant if you're unsure.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)"><span>Forgot to use TapNPay+ — can I still get cash back?</span><span class="faq-icon">+</span></div>
+        <div class="faq-a">
+          <p>Unfortunately not. Merchants only provide cash back when their digital gift cards are purchased through TapNPay+. We cannot add cash back for purchases made outside the app.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)"><span>How does TapNPay+ support my group or team?</span><span class="faq-icon">+</span></div>
+        <div class="faq-a">
+          <p>When you join through a group's unique link, a portion of every cash back transaction you earn automatically flows back to that group or program. There's no extra cost to you — the support comes from the reward structure itself. The more you shop, the more your group earns.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)"><span>Is there a membership fee?</span><span class="faq-icon">+</span></div>
+        <div class="faq-a">
+          <p>Yes, TapNPay+ operates on a low-cost annual membership model. This membership gives you full access to the app, all 300+ brand partners, and unlimited instant cash back. The membership pays for itself quickly — most members earn it back within their first few purchases.</p>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:48px;" class="reveal">
+      <p style="color:rgba(255,255,255,0.4);font-size:15px;margin-bottom:20px;">Still have questions?</p>
+      <a onclick="nav('contact')" class="btn-primary" style="font-size:14px;cursor:pointer;">CONTACT OUR TEAM</a>
     </div>
   </div>
 </section>
@@ -397,27 +873,32 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;o
 
 <!-- ==================== CONTACT ==================== -->
 <div class="page" id="page-contact">
-<section class="section-pad" style="padding-top:140px;">
+<section class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="section-label reveal">Contact</div>
+  <h1 class="reveal">LET'S MAKE<br><span class="gradient-text">THIS HAPPEN</span></h1>
+  <p class="reveal">Fill out the form and one of our specialists will reach out within 24 hours to discuss how TapNPay+ can work for you.</p>
+</section>
+<section class="section-pad" style="background:rgba(14,8,34,0.5);">
   <div class="container">
-    <div class="section-header"><div class="section-label reveal">Contact</div><h2 class="section-title reveal">LET'S MAKE THIS HAPPEN</h2><p class="section-subtitle reveal">Fill out the form below and one of our specialists will reach out to discuss how TapNPay+ can work for you.</p></div>
     <div class="contact-form reveal">
-      <div class="form-group"><input type="text" id="c-name" placeholder="Your name"></div>
-      <div class="form-group"><input type="tel" id="c-phone" placeholder="Phone number"></div>
-      <div class="form-group"><input type="email" id="c-email" placeholder="Email address"></div>
-      <div class="form-group"><input type="text" id="c-group" placeholder="Group / Organization name"></div>
+      <div class="form-group"><input type="text" id="c-name" placeholder="Your name *"></div>
+      <div class="form-group"><input type="tel" id="c-phone" placeholder="Phone number *"></div>
+      <div class="form-group"><input type="email" id="c-email" placeholder="Email address *"></div>
+      <div class="form-group"><input type="text" id="c-group" placeholder="Group / Organization name *"></div>
       <div class="form-group"><textarea id="c-message" placeholder="Tell us about your goals..."></textarea></div>
-      <button type="button" class="form-submit" id="c-submit" onclick="submitContact()">SEND MESSAGE</button>
-      <div id="c-success" style="display:none;text-align:center;padding:20px 0;font-size:16px;font-weight:600;color:var(--green-neon);">Thanks for reaching out! We'll be in touch within 24 hours.</div>
+      <button type="button" class="form-submit" id="c-submit" onclick="submitForm('contact')">SEND MESSAGE</button>
+      <div class="form-success" id="contact-success">✓ Thanks for reaching out! We'll be in touch within 24 hours.</div>
     </div>
-    <div style="text-align:center;margin-top:48px;" class="reveal">
-      <p style="font-family:'Bebas Neue',sans-serif;font-size:36px;color:var(--green-neon);">(800) 793-1276</p>
-      <p style="font-size:14px;color:rgba(255,255,255,0.4);margin-top:8px;">400 Holiday Dr. Suite 210, Pittsburgh, PA 15241</p>
-      <div style="display:flex;gap:12px;justify-content:center;margin-top:20px;">
-        <a href="https://www.instagram.com/tapnpayplus/" class="social-icon" style="width:44px;height:44px;font-size:13px;">IG</a>
-        <a href="https://www.facebook.com/Tapnpay-100634918043539/" class="social-icon" style="width:44px;height:44px;font-size:13px;">FB</a>
-        <a href="https://www.linkedin.com/company/tapnpayplus/" class="social-icon" style="width:44px;height:44px;font-size:13px;">LI</a>
-        <a href="https://www.twitter.com/TapNPayPlus" class="social-icon" style="width:44px;height:44px;font-size:13px;">X</a>
-        <a href="https://www.youtube.com/channel/UC0o5x1DyshialLsCrJ9Qbvg" class="social-icon" style="width:44px;height:44px;font-size:13px;">YT</a>
+    <div style="text-align:center;margin-top:56px;" class="reveal">
+      <p style="font-family:'Bebas Neue',sans-serif;font-size:clamp(28px,5vw,44px);color:var(--green-neon);">(800) 793-1276</p>
+      <p style="font-size:14px;color:rgba(255,255,255,0.4);margin-top:10px;">400 Holiday Dr. Suite 210, Pittsburgh, PA 15241</p>
+      <div style="display:flex;gap:12px;justify-content:center;margin-top:20px;flex-wrap:wrap;">
+        <a href="https://www.instagram.com/tapnpayplus/" class="social-icon" style="width:48px;height:48px;font-size:13px;">IG</a>
+        <a href="https://www.facebook.com/Tapnpay-100634918043539/" class="social-icon" style="width:48px;height:48px;font-size:13px;">FB</a>
+        <a href="https://www.linkedin.com/company/tapnpayplus/" class="social-icon" style="width:48px;height:48px;font-size:13px;">LI</a>
+        <a href="https://www.twitter.com/TapNPayPlus" class="social-icon" style="width:48px;height:48px;font-size:13px;">X</a>
+        <a href="https://www.youtube.com/channel/UC0o5x1DyshialLsCrJ9Qbvg" class="social-icon" style="width:48px;height:48px;font-size:13px;">YT</a>
       </div>
     </div>
   </div>
@@ -427,63 +908,152 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;o
 <!-- FOOTER -->
 <footer class="footer">
   <div class="footer-inner">
-    <div class="footer-left"><div class="f-logo">TAPNPAY<span>+</span></div><p>400 Holiday Dr. Suite 210, Pittsburgh, PA 15241</p><p>(800) 793-1276 &nbsp;|&nbsp; &copy; 2026 TapNPay+</p></div>
-    <div class="footer-links"><a href="https://www.tapnpayplus.com/terms-of-use">Terms</a><a href="https://www.tapnpayplus.com/privacy-policy">Privacy</a><a href="https://www.tapnpayplus.com/parent-participation-agreement">Parent Participation</a></div>
-    <div class="footer-social"><a href="https://www.instagram.com/tapnpayplus/" class="social-icon">IG</a><a href="https://www.facebook.com/Tapnpay-100634918043539/" class="social-icon">FB</a><a href="https://www.linkedin.com/company/tapnpayplus/" class="social-icon">LI</a><a href="https://www.twitter.com/TapNPayPlus" class="social-icon">X</a></div>
+    <div class="footer-left">
+      <div class="f-logo">TAPNPAY<span>+</span></div>
+      <p>Cash Back Impact App</p>
+      <p>400 Holiday Dr. Suite 210<br>Pittsburgh, PA 15241</p>
+      <p>(800) 793-1276</p>
+      <p style="margin-top:8px;">© 2026 TapNPay+. All Rights Reserved.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Platform</h5>
+      <a onclick="nav('home')">Home</a>
+      <a onclick="nav('rewards')">Rewards</a>
+      <a onclick="nav('impact')">Impact Options</a>
+      <a onclick="nav('strategic')">Strategic Partners</a>
+      <a onclick="nav('merchants')">Merchants</a>
+    </div>
+    <div class="footer-col">
+      <h5>Athletes</h5>
+      <a href="https://nil.tapnpayplus.com" target="_blank">College NIL</a>
+      <a href="https://impact.tapnpayplus.com" target="_blank">High School</a>
+      <a onclick="nav('about')">About Us</a>
+      <a onclick="nav('faqs')">FAQs</a>
+      <a onclick="nav('contact')">Contact Us</a>
+    </div>
+    <div class="footer-col">
+      <h5>Legal</h5>
+      <a href="https://www.tapnpayplus.com/terms-of-use">Terms of Use</a>
+      <a href="https://www.tapnpayplus.com/privacy-policy">Privacy Policy</a>
+      <a href="https://www.tapnpayplus.com/parent-participation-agreement">Parent Participation</a>
+      <div class="footer-social" style="margin-top:16px;">
+        <a href="https://www.instagram.com/tapnpayplus/" class="social-icon">IG</a>
+        <a href="https://www.facebook.com/Tapnpay-100634918043539/" class="social-icon">FB</a>
+        <a href="https://www.linkedin.com/company/tapnpayplus/" class="social-icon">LI</a>
+        <a href="https://www.twitter.com/TapNPayPlus" class="social-icon">X</a>
+        <a href="https://www.youtube.com/channel/UC0o5x1DyshialLsCrJ9Qbvg" class="social-icon">YT</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h5>Get The App</h5>
+      <div class="app-badges">
+        <a href="https://apps.apple.com" class="app-badge">🍎 App Store</a>
+        <a href="https://play.google.com" class="app-badge">▶ Google Play</a>
+      </div>
+    </div>
   </div>
 </footer>
 
 <script>
+// ===== BRANDS DATA =====
+var brands=[
+  // ROW 1
+  {r:1,n:'Nike',d:'nike.com'},{r:1,n:'Adidas',d:'adidas.com'},{r:1,n:'Amazon',d:'amazon.com'},{r:1,n:'Apple',d:'apple.com'},
+  {r:1,n:'Target',d:'target.com'},{r:1,n:'Walmart',d:'walmart.com'},{r:1,n:'Best Buy',d:'bestbuy.com'},{r:1,n:'Starbucks',d:'starbucks.com'},
+  {r:1,n:"Home Depot",d:'homedepot.com'},{r:1,n:"Macy's",d:'macys.com'},{r:1,n:'Under Armour',d:'underarmour.com'},{r:1,n:'Nordstrom',d:'nordstrom.com'},
+  {r:1,n:'Sephora',d:'sephora.com'},{r:1,n:"Lowe's",d:'lowes.com'},{r:1,n:'Old Navy',d:'oldnavy.com'},{r:1,n:'Gap',d:'gap.com'},
+  // ROW 2
+  {r:2,n:'DoorDash',d:'doordash.com'},{r:2,n:'Uber Eats',d:'ubereats.com'},{r:2,n:"Kohl's",d:'kohls.com'},{r:2,n:'Foot Locker',d:'footlocker.com'},
+  {r:2,n:'Puma',d:'puma.com'},{r:2,n:"Dick's Sporting",d:'dickssportinggoods.com'},{r:2,n:'GameStop',d:'gamestop.com'},{r:2,n:'Petco',d:'petco.com'},
+  {r:2,n:'Costco',d:'costco.com'},{r:2,n:"Sam's Club",d:'samsclub.com'},{r:2,n:'Walgreens',d:'walgreens.com'},{r:2,n:'CVS',d:'cvs.com'},
+  {r:2,n:'Reebok',d:'reebok.com'},{r:2,n:'New Balance',d:'newbalance.com'},{r:2,n:'ASICS',d:'asics.com'},{r:2,n:'Fanatics',d:'fanatics.com'},
+  // ROW 3
+  {r:3,n:'JCPenney',d:'jcpenney.com'},{r:3,n:'T.J. Maxx',d:'tjmaxx.com'},{r:3,n:'REI',d:'rei.com'},{r:3,n:'Academy Sports',d:'academy.com'},
+  {r:3,n:'Finish Line',d:'finishline.com'},{r:3,n:'Converse',d:'converse.com'},{r:3,n:'Crocs',d:'crocs.com'},{r:3,n:'Lululemon',d:'lululemon.com'},
+  {r:3,n:'Brooks',d:'brooksrunning.com'},{r:3,n:'Instacart',d:'instacart.com'},{r:3,n:'Grubhub',d:'grubhub.com'},{r:3,n:'Chipotle',d:'chipotle.com'},
+  {r:3,n:"Wendy's",d:'wendys.com'},{r:3,n:'Marshalls',d:'marshalls.com'},{r:3,n:'Champs',d:'champssports.com'},{r:3,n:'Bath & Body',d:'bathandbodyworks.com'},
+  // ROW 4 (merchants page extra)
+  {r:4,n:'Dunkin',d:'dunkindonuts.com'},{r:4,n:'Ulta Beauty',d:'ulta.com'},{r:4,n:'Longhorn',d:'longhornsteakhouse.com'},{r:4,n:'Buffalo Wild Wings',d:'buffalowildwings.com'},
+  {r:4,n:"Applebee's",d:'applebees.com'},{r:4,n:'Cheesecake Factory',d:'thecheesecakefactory.com'},{r:4,n:'TopGolf',d:'topgolf.com'},{r:4,n:"Chili's",d:'chilis.com'},
+  {r:4,n:'Olive Garden',d:'olivegarden.com'},{r:4,n:"BJ's",d:'bjsrestaurants.com'},{r:4,n:'American Eagle',d:'ae.com'},{r:4,n:'Aerie',d:'aerie.com'},
+  {r:4,n:'Bravo Italian',d:'bravoitalian.com'},{r:4,n:'Giant Eagle',d:'gianteagle.com'},{r:4,n:'Southwest',d:'southwest.com'},{r:4,n:'AMC Theaters',d:'amctheatres.com'},
+  // ROW 5 (merchants page extra)
+  {r:5,n:'Disney',d:'disney.com'},{r:5,n:'Williams-Sonoma',d:'williams-sonoma.com'},{r:5,n:"Panera Bread",d:'panerabread.com'},{r:5,n:"Papa John's",d:'papajohns.com'},
+  {r:5,n:'Whole Foods',d:'wholefoods.com'},{r:5,n:"Moe's",d:'moes.com'},{r:5,n:'Ace Hardware',d:'acehardware.com'},{r:5,n:'Alamo Drafthouse',d:'drafthouse.com'},
+  {r:5,n:'Atheleta',d:'athleta.com'},{r:5,n:'Abercrombie',d:'abercrombie.com'},{r:5,n:'1-800-Flowers',d:'1800flowers.com'},{r:5,n:'Atom Tickets',d:'atomtickets.com'},
+  {r:5,n:'Brooksrunning',d:'brooksrunning.com'},{r:5,n:'Efish Grill',d:'eriefish.com'},{r:5,n:'McCormick Schmick',d:'mccormickandschmicks.com'},{r:5,n:'Aeropostale',d:'aeropostale.com'}
+];
+
+function chip(b){
+  var d=document.createElement('div');d.className='brand-chip';
+  d.innerHTML='<img src="https://www.google.com/s2/favicons?domain='+b.d+'&sz=128" alt="'+b.n+'" onerror="this.style.display=\'none\'"><span class="brand-name">'+b.n+'</span>';
+  return d;
+}
+function fillRow(id,row){
+  var t=document.getElementById(id);if(!t||t.children.length)return;
+  var rb=brands.filter(function(b){return b.r===row;});
+  [].concat(rb,rb).forEach(function(b){t.appendChild(chip(b));});
+}
+// Fill home + rewards rows (rows 1-3) immediately
+fillRow('hrow1',1);fillRow('hrow2',2);fillRow('hrow3',3);
+
 // ===== SPA NAV =====
+var allNavIds=['home','rewards','impact','strategic','merchants','about','faqs','contact'];
 function nav(page){
   document.querySelectorAll('.page').forEach(function(p){p.classList.remove('active');});
-  document.querySelectorAll('.nav-links a').forEach(function(a){a.classList.remove('active');});
-  var el=document.getElementById('page-'+page);if(el)el.classList.add('active');
+  allNavIds.forEach(function(id){var el=document.getElementById('nav-'+id);if(el)el.classList.remove('active');});
+  var pg=document.getElementById('page-'+page);if(pg)pg.classList.add('active');
   var navEl=document.getElementById('nav-'+page);if(navEl)navEl.classList.add('active');
   window.scrollTo({top:0,behavior:'smooth'});
-  document.getElementById('navLinks').classList.remove('open');
   location.hash=page;
   setTimeout(function(){
     document.querySelectorAll('.reveal:not(.visible)').forEach(function(el){revealObs.observe(el);});
     document.querySelectorAll('.counter:not([data-counted])').forEach(function(el){counterObs.observe(el);});
-    if(page==='merchants'&&!document.getElementById('mrow1').children.length){fillRow('mrow1',1);fillRow('mrow2',2);fillRow('mrow3',3);}
-    initGlowCards();
-    initTiltCards();
+    // Lazy-fill rows
+    if(page==='rewards'){fillRow('rrow1',1);fillRow('rrow2',2);fillRow('rrow3',3);}
+    if(page==='merchants'){fillRow('mrow1',1);fillRow('mrow2',2);fillRow('mrow3',3);fillRow('mrow4',4);fillRow('mrow5',5);}
+    initGlowCards();initTiltCards();
+    document.getElementById('navLinks').classList.remove('open');
   },100);
 }
+function closeNav(){document.getElementById('navLinks').classList.remove('open');}
+function toggleNav(){document.getElementById('navLinks').classList.toggle('open');}
+// Mobile athlete dropdown
+document.getElementById('athletesDropdown').addEventListener('click',function(e){
+  if(window.innerWidth<=768){e.stopPropagation();this.classList.toggle('mobile-open');}
+});
+document.getElementById('moreDropdown').addEventListener('click',function(e){
+  if(window.innerWidth<=768){e.stopPropagation();this.classList.toggle('mobile-open');}
+});
 window.addEventListener('load',function(){var h=location.hash.replace('#','')||'home';nav(h);});
 window.addEventListener('hashchange',function(){var h=location.hash.replace('#','')||'home';nav(h);});
 
-// ===== BRANDS =====
-var brands=[
-  {row:1,name:'Nike',domain:'nike.com'},{row:1,name:'Adidas',domain:'adidas.com'},{row:1,name:'Amazon',domain:'amazon.com'},{row:1,name:'Apple',domain:'apple.com'},{row:1,name:'Target',domain:'target.com'},{row:1,name:'Walmart',domain:'walmart.com'},{row:1,name:'Best Buy',domain:'bestbuy.com'},{row:1,name:'Starbucks',domain:'starbucks.com'},{row:1,name:'Home Depot',domain:'homedepot.com'},{row:1,name:"Macy's",domain:'macys.com'},{row:1,name:'Under Armour',domain:'underarmour.com'},{row:1,name:'Nordstrom',domain:'nordstrom.com'},{row:1,name:'Sephora',domain:'sephora.com'},{row:1,name:"Lowe's",domain:'lowes.com'},{row:1,name:'Old Navy',domain:'oldnavy.com'},{row:1,name:'Gap',domain:'gap.com'},
-  {row:2,name:'DoorDash',domain:'doordash.com'},{row:2,name:'Uber Eats',domain:'ubereats.com'},{row:2,name:"Kohl's",domain:'kohls.com'},{row:2,name:'Foot Locker',domain:'footlocker.com'},{row:2,name:'Puma',domain:'puma.com'},{row:2,name:"Dick's Sporting",domain:'dickssportinggoods.com'},{row:2,name:'GameStop',domain:'gamestop.com'},{row:2,name:'Petco',domain:'petco.com'},{row:2,name:'Costco',domain:'costco.com'},{row:2,name:"Sam's Club",domain:'samsclub.com'},{row:2,name:'Walgreens',domain:'walgreens.com'},{row:2,name:'CVS',domain:'cvs.com'},{row:2,name:'Reebok',domain:'reebok.com'},{row:2,name:'New Balance',domain:'newbalance.com'},{row:2,name:'ASICS',domain:'asics.com'},{row:2,name:'Fanatics',domain:'fanatics.com'},
-  {row:3,name:'JCPenney',domain:'jcpenney.com'},{row:3,name:'T.J. Maxx',domain:'tjmaxx.com'},{row:3,name:'REI',domain:'rei.com'},{row:3,name:'Academy Sports',domain:'academy.com'},{row:3,name:'Finish Line',domain:'finishline.com'},{row:3,name:'Converse',domain:'converse.com'},{row:3,name:'Crocs',domain:'crocs.com'},{row:3,name:'Lululemon',domain:'lululemon.com'},{row:3,name:'Brooks',domain:'brooksrunning.com'},{row:3,name:'Instacart',domain:'instacart.com'},{row:3,name:'Grubhub',domain:'grubhub.com'},{row:3,name:'Chipotle',domain:'chipotle.com'},{row:3,name:"Wendy's",domain:'wendys.com'},{row:3,name:'Marshalls',domain:'marshalls.com'},{row:3,name:'Champs',domain:'champssports.com'},{row:3,name:'Bath & Body',domain:'bathandbodyworks.com'}
-];
-function createChip(b){var d=document.createElement('div');d.className='brand-chip';d.innerHTML='<img src="https://www.google.com/s2/favicons?domain='+b.domain+'&sz=128" alt="'+b.name+'" onerror="this.style.display=\'none\'"><span class="brand-name">'+b.name+'</span>';return d;}
-function fillRow(id,row){var t=document.getElementById(id);if(!t||t.children.length)return;var rb=brands.filter(function(b){return b.row===row;});[].concat(rb,rb).forEach(function(b){t.appendChild(createChip(b));});}
-fillRow('row1',1);fillRow('row2',2);fillRow('row3',3);
-
-// ===== SCROLL PROGRESS =====
+// ===== SCROLL =====
 var progressBar=document.getElementById('scrollProgress');
 window.addEventListener('scroll',function(){
   var h=document.documentElement.scrollHeight-window.innerHeight;
   progressBar.style.width=h>0?(window.scrollY/h)*100+'%':'0';
   document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>60);
-});
+},{passive:true});
 
 // ===== FAQ =====
-function toggleFaq(el){var item=el.closest('.faq-item');document.querySelectorAll('.faq-item').forEach(function(i){if(i!==item)i.classList.remove('open');});item.classList.toggle('open');}
+function toggleFaq(el){
+  var item=el.closest('.faq-item');
+  document.querySelectorAll('.faq-item').forEach(function(i){if(i!==item)i.classList.remove('open');});
+  item.classList.toggle('open');
+}
 
 // ===== REVEAL =====
-var revealObs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:0.1,rootMargin:'0px 0px -30px 0px'});
+var revealObs=new IntersectionObserver(function(entries){
+  entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');}});
+},{threshold:0.08,rootMargin:'0px 0px -20px 0px'});
 document.querySelectorAll('.reveal').forEach(function(el){revealObs.observe(el);});
 
 // ===== COUNTER =====
 var counterObs=new IntersectionObserver(function(entries){
-  entries.forEach(function(entry){
-    if(entry.isIntersecting){
-      var el=entry.target;var target=parseInt(el.dataset.target);
+  entries.forEach(function(e){
+    if(e.isIntersecting){
+      var el=e.target;var target=parseInt(el.dataset.target);
       if(!target||el.dataset.counted)return;
       el.dataset.counted='1';var current=0;var step=Math.ceil(target/35);
       var timer=setInterval(function(){current+=step;if(current>=target){current=target;clearInterval(timer);}el.textContent=current;},25);
@@ -494,14 +1064,26 @@ var counterObs=new IntersectionObserver(function(entries){
 document.querySelectorAll('.counter').forEach(function(el){counterObs.observe(el);});
 
 // ===== PARTICLES =====
-(function(){var c=document.getElementById('particles');for(var i=0;i<28;i++){var p=document.createElement('div');p.className='particle';var size=Math.random()*4+1.5;p.style.width=size+'px';p.style.height=size+'px';p.style.left=Math.random()*100+'%';p.style.background=Math.random()>0.4?'rgba(0,230,118,0.6)':'rgba(139,92,246,0.5)';p.style.animationDuration=(Math.random()*12+8)+'s';p.style.animationDelay=(Math.random()*12)+'s';c.appendChild(p);}})();
+(function(){
+  var c=document.getElementById('particles');if(!c)return;
+  for(var i=0;i<28;i++){
+    var p=document.createElement('div');p.className='particle';
+    var sz=Math.random()*4+1.5;p.style.width=sz+'px';p.style.height=sz+'px';
+    p.style.left=Math.random()*100+'%';
+    p.style.background=Math.random()>0.4?'rgba(0,230,118,0.6)':'rgba(139,92,246,0.5)';
+    p.style.animationDuration=(Math.random()*12+8)+'s';p.style.animationDelay=(Math.random()*12)+'s';
+    c.appendChild(p);
+  }
+})();
 
-// ===== MOUSE GLOW ON CARDS =====
+// ===== GLOW CARDS =====
 function initGlowCards(){
   document.querySelectorAll('.glow-card,.step-card').forEach(function(card){
     if(card.dataset.glowed)return;card.dataset.glowed='1';
     var glow=document.createElement('div');glow.className='card-glow';card.appendChild(glow);
-    card.addEventListener('mousemove',function(e){var rect=card.getBoundingClientRect();glow.style.left=(e.clientX-rect.left)+'px';glow.style.top=(e.clientY-rect.top)+'px';glow.style.opacity='1';});
+    card.addEventListener('mousemove',function(e){
+      var r=card.getBoundingClientRect();glow.style.left=(e.clientX-r.left)+'px';glow.style.top=(e.clientY-r.top)+'px';glow.style.opacity='1';
+    });
     card.addEventListener('mouseleave',function(){glow.style.opacity='0';});
   });
 }
@@ -512,40 +1094,54 @@ function initTiltCards(){
   document.querySelectorAll('.glow-card,.step-card').forEach(function(card){
     if(card.dataset.tilted)return;card.dataset.tilted='1';
     card.addEventListener('mousemove',function(e){
-      var rect=card.getBoundingClientRect();var x=(e.clientX-rect.left)/rect.width-0.5;var y=(e.clientY-rect.top)/rect.height-0.5;
-      card.style.transform='perspective(800px) rotateY('+x*8+'deg) rotateX('+(-y*8)+'deg) translateY(-6px)';
+      var r=card.getBoundingClientRect();var x=(e.clientX-r.left)/r.width-0.5;var y=(e.clientY-r.top)/r.height-0.5;
+      card.style.transform='perspective(800px) rotateY('+(x*8)+'deg) rotateX('+(-y*8)+'deg) translateY(-6px)';
     });
     card.addEventListener('mouseleave',function(){card.style.transform='perspective(800px) rotateY(0) rotateX(0) translateY(0)';});
   });
 }
 initTiltCards();
 
-// ===== BUTTON RIPPLE =====
-document.querySelectorAll('.btn-primary,.btn-secondary,.form-submit').forEach(function(btn){
-  btn.addEventListener('click',function(e){
-    var rect=btn.getBoundingClientRect();var ripple=document.createElement('span');ripple.className='btn-ripple';
-    ripple.style.left=(e.clientX-rect.left)+'px';ripple.style.top=(e.clientY-rect.top)+'px';
-    ripple.style.width=ripple.style.height=Math.max(rect.width,rect.height)+'px';
-    btn.appendChild(ripple);setTimeout(function(){ripple.remove();},600);
-  });
+// ===== RIPPLE =====
+document.addEventListener('click',function(e){
+  var btn=e.target.closest('.btn-primary,.btn-secondary,.form-submit');
+  if(!btn)return;
+  var r=btn.getBoundingClientRect();var ripple=document.createElement('span');ripple.className='btn-ripple';
+  ripple.style.left=(e.clientX-r.left)+'px';ripple.style.top=(e.clientY-r.top)+'px';
+  ripple.style.width=ripple.style.height=Math.max(r.width,r.height)+'px';
+  btn.appendChild(ripple);setTimeout(function(){ripple.remove();},600);
 });
 
-// ===== HERO PARALLAX =====
-var heroContent=document.getElementById('heroContent');
-var heroGrid=document.getElementById('heroGrid');
+// ===== PARALLAX =====
+var heroContent=document.getElementById('heroContent');var heroGrid=document.getElementById('heroGrid');
 window.addEventListener('scroll',function(){
   if(window.scrollY<window.innerHeight){
     if(heroContent)heroContent.style.transform='translateY('+window.scrollY*0.15+'px)';
     if(heroGrid)heroGrid.style.transform='translateY('+window.scrollY*0.05+'px)';
   }
-});
+},{passive:true});
 
-// ===== CONTACT FORM =====
-function submitContact(){
-  var n=document.getElementById('c-name').value.trim();var e=document.getElementById('c-email').value.trim();
-  if(!n||!e){alert('Please fill out at least your name and email.');return;}
-  var btn=document.getElementById('c-submit');btn.textContent='SENDING...';btn.disabled=true;
-  setTimeout(function(){btn.style.display='none';document.getElementById('c-success').style.display='block';},800);
+// ===== FORMS =====
+function submitForm(id){
+  var fieldMap={
+    home:['hf-name','hf-phone','hf-email','hf-group'],
+    rewards:['rf-name','rf-phone','rf-email','rf-group'],
+    impact:['if-name','if-phone','if-email','if-group'],
+    strategic:['spf-name','spf-phone','spf-email','spf-org'],
+    contact:['c-name','c-phone','c-email','c-group']
+  };
+  var fields=fieldMap[id]||[];
+  var name=document.getElementById(fields[0]);var email=document.getElementById(fields[2]||fields[1]);
+  if(name&&!name.value.trim()){alert('Please fill out your name.');return;}
+  if(email&&!email.value.trim()){alert('Please fill out your email.');return;}
+  var btn=document.querySelector('#'+id+'-success').previousElementSibling;
+  if(btn){btn.textContent='SENDING...';btn.disabled=true;}
+  // GHL Webhook placeholder — wire up when URL provided by Colton
+  // fetch('GHL_WEBHOOK_URL', {method:'POST', body: JSON.stringify({...formData}), headers:{'Content-Type':'application/json'}});
+  setTimeout(function(){
+    if(btn)btn.style.display='none';
+    document.getElementById(id+'-success').style.display='block';
+  },800);
 }
 </script>
 </body>
