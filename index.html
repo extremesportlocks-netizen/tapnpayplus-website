@@ -22,6 +22,40 @@
 body{font-family:'Outfit',sans-serif;background:var(--dark);color:var(--white);overflow-x:hidden;}
 body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:0.025;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-repeat:repeat;background-size:128px 128px;}
 
+
+/* DUOTONE PHOTO SYSTEM */
+.photo-bg{position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none;}
+.photo-bg img{width:100%;height:100%;object-fit:cover;filter:grayscale(100%) brightness(0.28) contrast(1.3);display:block;transition:transform 8s ease;}
+.photo-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(74,29,150,0.72) 0%,rgba(6,2,15,0.82) 100%);}
+.photo-bg.green-tint::after{background:linear-gradient(135deg,rgba(0,60,30,0.75) 0%,rgba(6,2,15,0.85) 100%);}
+.photo-bg.subtle::after{background:linear-gradient(135deg,rgba(26,10,62,0.88) 0%,rgba(6,2,15,0.92) 100%);}
+/* hero needs z-index on content above photo-bg */
+.hero-mesh,.hero-grid,.hero-orbs,.particles,.hero-content{z-index:1;position:relative;}
+.page-hero>*:not(.photo-bg){position:relative;z-index:1;}
+
+/* CSS PHONE MOCKUP */
+.phone-mockup-wrap{display:flex;justify-content:center;align-items:center;}
+.phone-shell{width:260px;background:linear-gradient(145deg,#1E0D42,#0A051C);border-radius:44px;border:2px solid rgba(139,92,246,0.25);padding:14px;box-shadow:0 0 80px rgba(139,92,246,0.12),0 40px 80px rgba(0,0,0,0.5),inset 0 1px 0 rgba(255,255,255,0.04);}
+.phone-screen{background:#06020F;border-radius:32px;overflow:hidden;}
+.phone-notch{width:70px;height:18px;background:#0A051C;border-radius:0 0 12px 12px;margin:0 auto 14px;}
+.app-header{display:flex;align-items:center;justify-content:space-between;padding:0 16px 14px;border-bottom:1px solid rgba(139,92,246,0.08);}
+.app-header-logo{font-family:'Bebas Neue',sans-serif;font-size:16px;letter-spacing:1px;color:#fff;}
+.app-header-logo span{color:var(--green-neon);}
+.app-header-icon{width:28px;height:28px;border-radius:50%;background:rgba(139,92,246,0.15);display:flex;align-items:center;justify-content:center;font-size:12px;}
+.app-balance-section{padding:18px 16px;text-align:center;background:linear-gradient(135deg,rgba(0,230,118,0.04),rgba(14,8,34,0));border-bottom:1px solid rgba(139,92,246,0.06);}
+.app-balance-label{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:2px;color:rgba(255,255,255,0.3);margin-bottom:4px;}
+.app-balance-amount{font-family:'Bebas Neue',sans-serif;font-size:36px;color:var(--green-neon);letter-spacing:1px;line-height:1;}
+.app-balance-sub{font-size:10px;color:rgba(255,255,255,0.3);margin-top:4px;}
+.app-redeem{display:block;margin:12px 16px 0;padding:10px;background:linear-gradient(135deg,var(--green-neon),var(--green-dark));color:#06020F;font-weight:800;font-size:11px;text-transform:uppercase;letter-spacing:1.5px;border-radius:50px;border:none;text-align:center;width:calc(100% - 32px);}
+.app-brands{padding:14px 16px;}
+.app-brands-label{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:rgba(255,255,255,0.25);margin-bottom:10px;}
+.app-brand-row{display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.04);}
+.app-brand-icon{width:28px;height:28px;border-radius:6px;overflow:hidden;flex-shrink:0;}
+.app-brand-icon img{width:100%;height:100%;object-fit:cover;}
+.app-brand-name{font-size:11px;font-weight:600;color:rgba(255,255,255,0.7);flex:1;}
+.app-brand-pct{font-size:11px;font-weight:700;color:var(--green-neon);}
+.phone-glow{position:absolute;width:200px;height:200px;border-radius:50%;background:radial-gradient(circle,rgba(0,230,118,0.06) 0%,transparent 70%);left:50%;top:50%;transform:translate(-50%,-50%);pointer-events:none;}
+
 /* SCROLL PROGRESS */
 .scroll-progress{position:fixed;top:72px;left:0;height:2px;background:linear-gradient(90deg,var(--green-neon),var(--purple-bright),var(--green-neon));background-size:200% 100%;animation:shimmer-bar 3s linear infinite;z-index:1001;width:0;transition:width 0.1s;}
 @keyframes shimmer-bar{0%{background-position:0% 0;}100%{background-position:200% 0;}}
@@ -283,6 +317,9 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;o
 <!-- ==================== HOME ==================== -->
 <div class="page active" id="page-home">
 <section class="hero">
+  <div class="photo-bg">
+    <img src="https://images.unsplash.com/photo-1461896836374-f18f46e4b759?w=1600&q=80&auto=format&fit=crop" alt="" loading="lazy" onerror="this.parentElement.style.display='none'">
+  </div>
   <div class="hero-mesh"></div>
   <div class="hero-grid" id="heroGrid"></div>
   <div class="hero-orbs"><div class="orb orb-1"></div><div class="orb orb-2"></div><div class="orb orb-3"></div></div>
@@ -345,19 +382,9 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;o
       <h2 class="section-title reveal">HOW TAPNPAY+ WORKS</h2>
       <p class="section-subtitle reveal">See exactly how members shop, earn instant cash back, and generate direct impact for their group — every single day.</p>
     </div>
-    <div class="video-frame reveal" style="max-width:800px;margin:0 auto;" data-ghl-video="slot-1">
-      <!--
-        VIDEO SLOT 1 — "How TapNPay+ Works"
-        To activate: replace the .video-placeholder-ui div below with:
-        <iframe src="YOUR_GHL_VIDEO_URL" allowfullscreen allow="autoplay"></iframe>
-        Then remove the .video-placeholder-ui div entirely.
-      -->
+    <div class="video-frame reveal" style="max-width:800px;margin:0 auto;">
       <div class="video-inner">
-        <div class="video-placeholder-ui">
-          <div class="video-play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
-          <div class="video-label">HOW DO YOU PLAN TO<br>KEEP FUNDING YOUR GROUP?</div>
-          <div class="video-sublabel">Video — provided via GHL</div>
-        </div>
+        <iframe src="https://www.youtube.com/embed/6Qs3_DnPDtE?rel=0&modestbranding=1&color=white&iv_load_policy=3" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" title="How TapNPay+ Works"></iframe>
       </div>
     </div>
   </div>
@@ -383,6 +410,24 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;o
       <div class="section-label reveal">Testimonials</div>
       <h2 class="section-title reveal">WHAT OUR USERS ARE SAYING</h2>
       <p class="section-subtitle reveal">Real athletes, real schools, real impact — hear directly from the communities TapNPay+ is changing.</p>
+    </div>
+    <div class="reveal" style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;max-width:800px;margin:0 auto 32px;border-radius:20px;overflow:hidden;">
+      <div style="aspect-ratio:3/4;overflow:hidden;position:relative;">
+        <img src="https://images.unsplash.com/photo-1547347298-4074ad3086af?w=400&q=80&auto=format&fit=crop&crop=face" alt="" style="width:100%;height:100%;object-fit:cover;filter:grayscale(100%) brightness(0.4) contrast(1.2);">
+        <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(74,29,150,0.6),rgba(6,2,15,0.5));"></div>
+      </div>
+      <div style="aspect-ratio:3/4;overflow:hidden;position:relative;">
+        <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=400&q=80&auto=format&fit=crop&crop=face" alt="" style="width:100%;height:100%;object-fit:cover;filter:grayscale(100%) brightness(0.4) contrast(1.2);">
+        <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,100,50,0.5),rgba(6,2,15,0.5));"></div>
+      </div>
+      <div style="aspect-ratio:3/4;overflow:hidden;position:relative;">
+        <img src="https://images.unsplash.com/photo-1546519638405-a9d1e0cbadf5?w=400&q=80&auto=format&fit=crop&crop=face" alt="" style="width:100%;height:100%;object-fit:cover;filter:grayscale(100%) brightness(0.4) contrast(1.2);">
+        <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(74,29,150,0.6),rgba(6,2,15,0.5));"></div>
+      </div>
+      <div style="aspect-ratio:3/4;overflow:hidden;position:relative;">
+        <img src="https://images.unsplash.com/photo-1526232761682-d26e03ac148e?w=400&q=80&auto=format&fit=crop" alt="" style="width:100%;height:100%;object-fit:cover;filter:grayscale(100%) brightness(0.4) contrast(1.2);">
+        <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,100,50,0.5),rgba(6,2,15,0.5));"></div>
+      </div>
     </div>
     <div class="video-frame reveal" style="max-width:800px;margin:0 auto;" data-ghl-video="slot-2">
       <!--
@@ -479,26 +524,45 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;o
         <p>Tired of car washes, coupon books, and time-consuming fundraising programs? TapNPay+ makes it simple with our Cash Back Impact App.</p>
         <p>Our membership provides daily impact and continuous support to your group, while giving you access to unlimited instant cash back at 300+ national brands. Members earn an average of 4% UNLIMITED INSTANT cash back on everyday purchases, while a portion of each transaction also impacts their group — at no extra cost.</p>
       </div>
-      <div style="display:grid;gap:16px;" class="reveal reveal-d2">
-        <div class="glow-card" style="background:linear-gradient(135deg,rgba(0,230,118,0.06),rgba(14,8,34,0.9));">
-          <div class="section-label" style="margin-bottom:8px;">Step 1</div>
-          <h3>Download TapNPay+</h3>
-          <p>Free on iPhone and Android. Set up in 60 seconds with your group's unique code.</p>
-        </div>
-        <div class="glow-card" style="background:linear-gradient(135deg,rgba(139,92,246,0.06),rgba(14,8,34,0.9));">
-          <div class="section-label" style="margin-bottom:8px;color:var(--purple-bright);">Step 2</div>
-          <h3>Shop 300+ Brands</h3>
-          <p>Purchase digital gift cards at the brands you already love — in-store, online, and restaurants nationwide.</p>
-        </div>
-        <div class="glow-card" style="background:linear-gradient(135deg,rgba(0,230,118,0.06),rgba(14,8,34,0.9));">
-          <div class="section-label" style="margin-bottom:8px;">Step 3</div>
-          <h3>Earn Instant Cash Back</h3>
-          <p>Get an average of 4% instant cash back on every purchase. Applied immediately — not quarterly like Rakuten.</p>
-        </div>
-        <div class="glow-card" style="background:linear-gradient(135deg,rgba(139,92,246,0.06),rgba(14,8,34,0.9));">
-          <div class="section-label" style="margin-bottom:8px;color:var(--purple-bright);">Step 4</div>
-          <h3>Support Your Group</h3>
-          <p>Every payment automatically generates impact for the team, school, or athlete you care about.</p>
+      <div class="phone-mockup-wrap reveal reveal-d2" style="position:relative;">
+        <div class="phone-glow"></div>
+        <div class="phone-shell">
+          <div class="phone-screen">
+            <div class="phone-notch"></div>
+            <div class="app-header">
+              <span class="app-header-logo">TAPNPAY<span>+</span></span>
+              <div class="app-header-icon">☰</div>
+            </div>
+            <div class="app-balance-section">
+              <div class="app-balance-label">Available Cash Back</div>
+              <div class="app-balance-amount">$24.88</div>
+              <div class="app-balance-sub">Lifetime Earned &nbsp;$397.21</div>
+              <button class="app-redeem">REDEEM CASH</button>
+            </div>
+            <div class="app-brands">
+              <div class="app-brands-label">Top Brands</div>
+              <div class="app-brand-row">
+                <div class="app-brand-icon"><img src="https://www.google.com/s2/favicons?domain=nike.com&sz=64" alt="Nike"></div>
+                <span class="app-brand-name">Nike</span>
+                <span class="app-brand-pct">4%</span>
+              </div>
+              <div class="app-brand-row">
+                <div class="app-brand-icon"><img src="https://www.google.com/s2/favicons?domain=target.com&sz=64" alt="Target"></div>
+                <span class="app-brand-name">Target</span>
+                <span class="app-brand-pct">4%</span>
+              </div>
+              <div class="app-brand-row">
+                <div class="app-brand-icon"><img src="https://www.google.com/s2/favicons?domain=amazon.com&sz=64" alt="Amazon"></div>
+                <span class="app-brand-name">Amazon</span>
+                <span class="app-brand-pct">5%</span>
+              </div>
+              <div class="app-brand-row">
+                <div class="app-brand-icon"><img src="https://www.google.com/s2/favicons?domain=starbucks.com&sz=64" alt="Starbucks"></div>
+                <span class="app-brand-name">Starbucks</span>
+                <span class="app-brand-pct">4%</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -625,6 +689,9 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;o
 <!-- ==================== K-12 SCHOOLS ==================== -->
 <div class="page" id="page-k12">
 <section class="page-hero">
+  <div class="photo-bg subtle">
+    <img src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=1400&q=80&auto=format&fit=crop" alt="" loading="lazy" onerror="this.parentElement.style.display='none'">
+  </div>
   <div class="page-hero-bg"></div>
   <div class="section-label reveal">Impact Options</div>
   <h1 class="reveal">K-12<br><span class="gradient-text">SCHOOLS</span></h1>
@@ -688,6 +755,9 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;o
 <!-- ==================== COLLEGE ATHLETICS ==================== -->
 <div class="page" id="page-college">
 <section class="page-hero">
+  <div class="photo-bg subtle">
+    <img src="https://images.unsplash.com/photo-1546519638405-a9d1e0cbadf5?w=1400&q=80&auto=format&fit=crop" alt="" loading="lazy" onerror="this.parentElement.style.display='none'">
+  </div>
   <div class="page-hero-bg"></div>
   <div class="section-label reveal">Impact Options</div>
   <h1 class="reveal">COLLEGE<br><span class="gradient-text">ATHLETICS</span></h1>
@@ -743,6 +813,9 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;o
 <!-- ==================== YOUTH SPORTS ==================== -->
 <div class="page" id="page-youth">
 <section class="page-hero">
+  <div class="photo-bg subtle">
+    <img src="https://images.unsplash.com/photo-1526232761682-d26e03ac148e?w=1400&q=80&auto=format&fit=crop" alt="" loading="lazy" onerror="this.parentElement.style.display='none'">
+  </div>
   <div class="page-hero-bg"></div>
   <div class="section-label reveal">Impact Options</div>
   <h1 class="reveal">YOUTH<br><span class="gradient-text">SPORTS</span></h1>
@@ -801,6 +874,9 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;o
 <!-- ==================== LICENSING ==================== -->
 <div class="page" id="page-licensing">
 <section class="page-hero">
+  <div class="photo-bg subtle">
+    <img src="https://images.unsplash.com/photo-1521737604082-b38e6bf9de2c?w=1400&q=80&auto=format&fit=crop" alt="" loading="lazy" onerror="this.parentElement.style.display='none'">
+  </div>
   <div class="page-hero-bg"></div>
   <div class="section-label reveal">Impact Options</div>
   <h1 class="reveal">LICENSING</h1>
@@ -895,6 +971,9 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;o
 <!-- ==================== STRATEGIC PARTNERS ==================== -->
 <div class="page" id="page-strategic">
 <section class="page-hero">
+  <div class="photo-bg subtle">
+    <img src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=1400&q=80&auto=format&fit=crop" alt="" loading="lazy" onerror="this.parentElement.style.display='none'">
+  </div>
   <div class="page-hero-bg"></div>
   <div class="section-label reveal">Partnerships</div>
   <h1 class="reveal">STRATEGIC PARTNERSHIPS<br><span class="gradient-text">THAT EXPAND IMPACT</span></h1>
