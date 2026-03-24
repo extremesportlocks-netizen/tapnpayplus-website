@@ -247,24 +247,38 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;o
 
 /* RESPONSIVE */
 @media(max-width:960px){
-  .split,.split.reverse{grid-template-columns:1fr;direction:ltr;}
+  .split,.split.reverse{grid-template-columns:1fr;direction:ltr;text-align:center;}
   .split.reverse{direction:ltr;}
+  .split-text{text-align:center;}
+  .split-text .btn-primary,.split-text .btn-secondary{margin-left:auto;margin-right:auto;}
+  .phone-shell{margin:0 auto;}
 }
 @media(max-width:768px){
   .navbar{padding:0 16px;}.nav-links{display:none;}.nav-links.open{display:flex;position:absolute;top:72px;left:0;right:0;flex-direction:column;background:rgba(6,2,15,0.98);padding:24px;gap:4px;border-bottom:1px solid rgba(139,92,246,0.1);max-height:80vh;overflow-y:auto;}.hamburger{display:flex;}.btn-primary.desk{display:none;}
   .nav-dropdown{position:static;}.dropdown-menu{position:static;transform:none;display:none;box-shadow:none;border:none;background:rgba(139,92,246,0.05);border-radius:8px;margin:4px 0;}
   .nav-dropdown.mobile-open .dropdown-menu{display:flex;}
   .hero-h1{font-size:clamp(44px,12vw,64px);}.section-title{font-size:32px;}.steps-grid{grid-template-columns:1fr;}
-  .footer-inner{flex-direction:column;}.section-pad{padding:80px 16px;}.page-hero{padding:120px 16px 60px;}
+  .footer-inner{flex-direction:column;text-align:center;align-items:center;}.footer-col{text-align:center;}.section-pad{padding:80px 16px;}.page-hero{padding:110px 16px 50px;}
   [style*="grid-template-columns:repeat(3,1fr)"]{grid-template-columns:1fr!important;}
   [style*="grid-template-columns:repeat(4,1fr)"]{grid-template-columns:repeat(2,1fr)!important;}
+  [style*="grid-template-columns:repeat(2,1fr)"]{grid-template-columns:1fr!important;}
   [style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr!important;}
   .hero-pills{flex-wrap:wrap;justify-content:center;gap:8px;}
+  .hero-sub{font-size:16px;max-width:90%;}
   body::after{display:none;}
   .feature-row{grid-template-columns:1fr;}
+  .phone-shell{width:220px;border-radius:36px;padding:10px;}
+  .video-frame iframe{min-height:240px;}
 }
 @media(max-width:420px){
-  .hero-h1{font-size:40px;}.section-title{font-size:28px;}.stat-big{font-size:42px;}
+  .hero-h1{font-size:36px;letter-spacing:0;}.section-title{font-size:26px;}.stat-big{font-size:36px;}
+  [style*="grid-template-columns:repeat(4,1fr)"]{grid-template-columns:1fr!important;}
+  [style*="grid-template-columns:repeat(2,1fr)"]{grid-template-columns:1fr!important;}
+  .hero-pills{flex-direction:column;align-items:center;}
+  .pill{width:100%;max-width:220px;justify-content:center;}
+  .phone-shell{width:200px;border-radius:32px;}
+  .page-hero{padding:100px 16px 40px;}
+  .hero{min-height:auto;padding:100px 16px 60px;}
 }
 </style>
 </head>
@@ -1297,6 +1311,9 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;o
   </div>
 </section>
 </div>
+
+<!-- DISCLAIMER -->
+<div style="text-align:center;padding:20px 24px 0;"><p style="font-size:11px;color:rgba(255,255,255,0.25);letter-spacing:1px;text-transform:uppercase;">Annual Membership Renews On April 1</p></div>
 
 <!-- FOOTER -->
 <footer class="footer">
