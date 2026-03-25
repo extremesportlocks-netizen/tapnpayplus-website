@@ -91,7 +91,10 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;o
 
 /* GLOBALS */
 .container{max-width:1100px;margin:0 auto;padding:0 24px;}
-.section-pad{padding:110px 24px;scroll-margin-top:80px;}
+.section-pad{padding:80px 24px;scroll-margin-top:80px;}
+.proof-bar{padding:20px 24px;text-align:center;border-top:1px solid rgba(139,92,246,0.06);border-bottom:1px solid rgba(139,92,246,0.06);background:rgba(18,11,46,0.5);position:relative;z-index:1;}
+.proof-bar p{font-size:13px;color:rgba(255,255,255,0.35);text-transform:uppercase;letter-spacing:3px;font-weight:600;}
+.faq-q .faq-label{font-family:'Bebas Neue',sans-serif;font-size:18px;color:var(--green-neon);margin-right:12px;}
 .section-header{text-align:center;margin-bottom:64px;}
 .section-label{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:4px;color:var(--green-neon);margin-bottom:16px;}
 .section-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(36px,5vw,54px);letter-spacing:2px;line-height:1.0;}
@@ -131,8 +134,8 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;o
 @keyframes float-up{0%{transform:translateY(100vh) scale(0);opacity:0;}10%{opacity:0.8;}90%{opacity:0.3;}100%{transform:translateY(-20vh) scale(1.5);opacity:0;}}
 .hero-content{position:relative;z-index:2;max-width:900px;transition:transform 0.1s linear;}
 .hero-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:3px;color:rgba(255,255,255,0.5);margin-bottom:28px;}
-.live-dot{width:6px;height:6px;border-radius:50%;background:var(--green-neon);box-shadow:0 0 8px var(--green-neon);animation:pulse-dot 2s ease-in-out infinite;}
-@keyframes pulse-dot{0%,100%{opacity:1;transform:scale(1);}50%{opacity:0.5;transform:scale(1.5);}}
+.live-dot{width:8px;height:8px;border-radius:50%;background:var(--green-neon);animation:pulse-dot 2s infinite;flex-shrink:0;}
+@keyframes pulse-dot{0%,100%{box-shadow:0 0 0 0 rgba(0,230,118,0.6);}50%{box-shadow:0 0 0 6px rgba(0,230,118,0);}}
 .hero-h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(52px,9vw,100px);letter-spacing:3px;line-height:0.95;margin-bottom:28px;opacity:0;animation:fade-up 0.8s 0.3s forwards;}
 @keyframes fade-up{from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);}}
 .hero-sub{font-size:18px;color:rgba(255,255,255,0.55);line-height:1.75;max-width:680px;margin:0 auto 36px;opacity:0;animation:fade-up 0.8s 0.6s forwards;}
@@ -169,8 +172,8 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;o
 .faq-item{border:1px solid rgba(139,92,246,0.1);border-radius:20px;margin-bottom:12px;overflow:hidden;background:rgba(14,8,34,0.6);}
 .faq-q{padding:22px 28px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-weight:600;font-size:15px;transition:background 0.3s;}
 .faq-q:hover{background:rgba(139,92,246,0.04);}
-.faq-icon{font-size:24px;color:var(--green-neon);transition:transform 0.3s;font-weight:300;flex-shrink:0;margin-left:16px;}
-.faq-item.open .faq-icon{transform:rotate(45deg);}
+.faq-icon{width:28px;height:28px;border-radius:8px;background:rgba(139,92,246,0.1);border:1px solid rgba(139,92,246,0.15);display:flex;align-items:center;justify-content:center;color:var(--purple-glow);font-size:18px;flex-shrink:0;margin-left:16px;transition:all 0.3s;}
+.faq-item.open .faq-icon{transform:rotate(45deg);background:rgba(0,230,118,0.1);color:var(--green-neon);}
 .faq-a{max-height:0;overflow:hidden;transition:max-height 0.45s ease,padding 0.3s;padding:0 28px;}
 .faq-item.open .faq-a{max-height:600px;padding:0 28px 24px;}
 .faq-a p{font-size:14px;color:rgba(255,255,255,0.55);line-height:1.8;margin-bottom:10px;}
@@ -179,9 +182,9 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;o
 /* CONTACT FORM */
 .contact-form{max-width:580px;margin:0 auto;}
 .form-group{margin-bottom:16px;}
-.form-group input,.form-group select,.form-group textarea{width:100%;padding:14px 18px;border-radius:12px;border:1px solid rgba(139,92,246,0.15);background:rgba(14,8,34,0.6);color:var(--white);font-family:'Outfit',sans-serif;font-size:15px;outline:none;transition:border 0.3s,box-shadow 0.3s;}
-.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--green-neon);box-shadow:0 0 20px rgba(0,230,118,0.08);}
-.form-group input::placeholder,.form-group textarea::placeholder{color:rgba(255,255,255,0.25);}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:14px 18px;border-radius:12px;border:1px solid rgba(255,255,255,0.08);background:rgba(255,255,255,0.04);color:var(--white);font-family:'Outfit',sans-serif;font-size:15px;outline:none;transition:border 0.3s,box-shadow 0.3s;}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:rgba(139,92,246,0.4);background:rgba(139,92,246,0.06);box-shadow:0 0 20px rgba(139,92,246,0.08);}
+.form-group input::placeholder,.form-group textarea::placeholder{color:rgba(255,255,255,0.2);}
 .form-group select{color:rgba(255,255,255,0.6);cursor:pointer;}
 .form-group select option{background:#0E0822;color:var(--white);}
 .form-group textarea{min-height:120px;resize:vertical;}
@@ -353,6 +356,10 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;o
     </div>
   </div>
 </section>
+
+<div class="proof-bar">
+  <p>Cash Back Impact App &nbsp;•&nbsp; 300+ National Brands &nbsp;•&nbsp; Pittsburgh, PA</p>
+</div>
 
 <!-- REWARDS MADE SIMPLE -->
 <section class="section-pad" style="background:rgba(14,8,34,0.5);">
@@ -1213,7 +1220,7 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;o
   <div class="container">
     <div class="faq-list reveal">
       <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)"><span>How do I redeem my cash back?</span><span class="faq-icon">+</span></div>
+        <div class="faq-q" onclick="toggleFaq(this)"><span><span class="faq-label">Q:</span> How do I redeem my cash back?</span><span class="faq-icon">+</span></div>
         <div class="faq-a">
           <p>Cash back can be redeemed two ways:</p>
           <p><strong style="color:var(--green-neon);">1. Apply toward a digital gift card:</strong> Add the gift card to your cart. On the payment screen, click the box that states "Apply Available Cash Back" and complete the order. Your cash back will be deducted from the total. If your gift card is more than your available cash, your selected credit card will be charged for the balance.</p>
@@ -1221,50 +1228,50 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;o
         </div>
       </div>
       <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)"><span>Isn't this just like Rakuten?</span><span class="faq-icon">+</span></div>
+        <div class="faq-q" onclick="toggleFaq(this)"><span><span class="faq-label">Q:</span> Isn't this just like Rakuten?</span><span class="faq-icon">+</span></div>
         <div class="faq-a">
           <p>No, not at all. With TapNPay+, you earn cash in stores AND online. Cash back can also be earned at 100s of restaurants nationwide. TapNPay+ cash back is <strong style="color:var(--green-neon);">instant</strong> — not deposited quarterly like Rakuten. And cash back can be applied directly to your next purchase within the app.</p>
           <p>Best of all, TapNPay+ can be used <strong style="color:var(--green-neon);">alongside Rakuten</strong> for double rewards! Example: shop Under Armour through Rakuten and earn their % back, then pay at checkout with a TapNPay+ digital gift card to stack both rewards.</p>
         </div>
       </div>
       <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)"><span>Can I use TapNPay+ with sales and coupons?</span><span class="faq-icon">+</span></div>
+        <div class="faq-q" onclick="toggleFaq(this)"><span><span class="faq-label">Q:</span> Can I use TapNPay+ with sales and coupons?</span><span class="faq-icon">+</span></div>
         <div class="faq-a">
           <p>Yes! Smart shoppers maximize coupons, promo codes, and store sales first, then use TapNPay+ to earn cash back on the already-discounted checkout price. Stack your savings.</p>
         </div>
       </div>
       <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)"><span>Can I have multiple payment methods on file?</span><span class="faq-icon">+</span></div>
+        <div class="faq-q" onclick="toggleFaq(this)"><span><span class="faq-label">Q:</span> Can I have multiple payment methods on file?</span><span class="faq-icon">+</span></div>
         <div class="faq-a">
           <p>Yes. You can store multiple payment methods for buying digital gift cards. Add them in your profile or during checkout by selecting "Save for Later." You can also nickname cards for easy reference.</p>
         </div>
       </div>
       <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)"><span>How do I check a gift card balance?</span><span class="faq-icon">+</span></div>
+        <div class="faq-q" onclick="toggleFaq(this)"><span><span class="faq-label">Q:</span> How do I check a gift card balance?</span><span class="faq-icon">+</span></div>
         <div class="faq-a">
           <p>Go to your Wallet and press the "Check Balance" button next to any digital gift card to see the current balance. If the option isn't available, the merchant doesn't support balance checks through TapNPay+. In that case, visit the merchant's website or check the instructions on the digital gift card itself.</p>
         </div>
       </div>
       <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)"><span>Can I use this to buy plastic gift cards?</span><span class="faq-icon">+</span></div>
+        <div class="faq-q" onclick="toggleFaq(this)"><span><span class="faq-label">Q:</span> Can I use this to buy plastic gift cards?</span><span class="faq-icon">+</span></div>
         <div class="faq-a">
           <p>Generally no. Most merchants do not allow digital gift cards to be used for purchasing physical gift cards. For example, you cannot buy a CVS digital gift card and then use it in-store to purchase plastic gift cards. Some merchants also restrict other purchase types — check with the merchant if you're unsure.</p>
         </div>
       </div>
       <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)"><span>Forgot to use TapNPay+ — can I still get cash back?</span><span class="faq-icon">+</span></div>
+        <div class="faq-q" onclick="toggleFaq(this)"><span><span class="faq-label">Q:</span> Forgot to use TapNPay+ — can I still get cash back?</span><span class="faq-icon">+</span></div>
         <div class="faq-a">
           <p>Unfortunately not. Merchants only provide cash back when their digital gift cards are purchased through TapNPay+. We cannot add cash back for purchases made outside the app.</p>
         </div>
       </div>
       <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)"><span>How does TapNPay+ support my group or team?</span><span class="faq-icon">+</span></div>
+        <div class="faq-q" onclick="toggleFaq(this)"><span><span class="faq-label">Q:</span> How does TapNPay+ support my group or team?</span><span class="faq-icon">+</span></div>
         <div class="faq-a">
           <p>When you join through a group's unique link, a portion of every cash back transaction you earn automatically flows back to that group or program. There's no extra cost to you — the support comes from the reward structure itself. The more you shop, the more your group earns.</p>
         </div>
       </div>
       <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)"><span>Is there a membership fee?</span><span class="faq-icon">+</span></div>
+        <div class="faq-q" onclick="toggleFaq(this)"><span><span class="faq-label">Q:</span> Is there a membership fee?</span><span class="faq-icon">+</span></div>
         <div class="faq-a">
           <p>Yes, TapNPay+ operates on a low-cost annual membership model. This membership gives you full access to the app, all 300+ brand partners, and unlimited instant cash back. The membership pays for itself quickly — most members earn it back within their first few purchases.</p>
         </div>
@@ -1299,7 +1306,6 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;o
     </div>
     <div style="text-align:center;margin-top:56px;" class="reveal">
       <p style="font-family:'Bebas Neue',sans-serif;font-size:clamp(28px,5vw,44px);color:var(--green-neon);">(800) 793-1276</p>
-      <p style="font-size:14px;color:rgba(255,255,255,0.4);margin-top:10px;">400 Holiday Dr. Suite 210, Pittsburgh, PA 15241</p>
       <div style="display:flex;gap:12px;justify-content:center;margin-top:20px;flex-wrap:wrap;">
         <a href="https://www.instagram.com/tapnpayplus/" class="social-icon" style="width:48px;height:48px;font-size:13px;">IG</a>
         <a href="https://www.facebook.com/Tapnpay-100634918043539/" class="social-icon" style="width:48px;height:48px;font-size:13px;">FB</a>
@@ -1321,7 +1327,6 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;o
     <div class="footer-left">
       <div class="f-logo">TAPNPAY<span>+</span></div>
       <p>Cash Back Impact App</p>
-      <p>400 Holiday Dr. Suite 210<br>Pittsburgh, PA 15241</p>
       <p>(800) 793-1276</p>
       <p style="margin-top:8px;">© 2026 TapNPay+. All Rights Reserved.</p>
     </div>
@@ -1358,8 +1363,8 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;o
     <div class="footer-col">
       <h5>Get The App</h5>
       <div class="app-badges">
-        <a href="https://apps.apple.com" class="app-badge">🍎 App Store</a>
-        <a href="https://play.google.com" class="app-badge">▶ Google Play</a>
+        <a href="https://apps.apple.com/us/app/tapnpay/id1521871802" class="app-badge"><svg viewBox="0 0 24 24" width="14" height="14" fill="#fff"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg> App Store</a>
+        <a href="https://play.google.com/store/apps/details?id=com.tapnpay.app" class="app-badge"><svg viewBox="0 0 24 24" width="14" height="14" fill="none"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 01-.61-.92V2.734c0-.382.218-.72.609-.92z" fill="#4285F4"/><path d="M17.194 8.57L5.073.493C4.553.196 3.99.13 3.609 1.814L13.792 12l3.402-3.43z" fill="#EA4335"/><path d="M3.609 22.186c.381.684.944.618 1.464.321l12.12-8.078L13.793 12 3.609 22.186z" fill="#34A853"/><path d="M20.854 10.758l-3.66-2.188L13.792 12l3.402 3.43 3.66-2.19c.916-.557.916-1.926 0-2.482z" fill="#FBBC04"/></svg> Google Play</a>
       </div>
     </div>
   </div>
