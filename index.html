@@ -1451,7 +1451,11 @@ function nav(page){
     closeNav();
   },100);
 }
-function closeNav(){document.getElementById('navLinks').classList.remove('open');document.querySelectorAll('.nav-dropdown.mobile-open').forEach(function(d){d.classList.remove('mobile-open');});}
+function closeNav(){
+  document.getElementById('navLinks').classList.remove('open');
+  document.querySelectorAll('.nav-dropdown.mobile-open').forEach(function(d){d.classList.remove('mobile-open');});
+  document.querySelectorAll('.nav-dropdown').forEach(function(d){d.style.pointerEvents='none';setTimeout(function(){d.style.pointerEvents='';},200);});
+}
 function toggleNav(){document.getElementById('navLinks').classList.toggle('open');}
 // Mobile dropdown toggles
 var athDrop=document.getElementById('athletesDropdown');
