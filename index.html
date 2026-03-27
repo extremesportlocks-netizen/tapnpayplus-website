@@ -1414,7 +1414,7 @@ function fillRow(id,row){
 fillRow('hrow1',1);fillRow('hrow2',2);fillRow('hrow3',3);
 
 // ===== SPA NAV =====
-var allNavIds=['home','rewards','impact','k12','college','youth','licensing','strategic','merchants','about','faqs','contact'];
+var allNavIds=['home','howitworks','licensing','merchants','about','faqs','contact'];
 function nav(page){
   document.querySelectorAll('.page').forEach(function(p){p.classList.remove('active');});
   allNavIds.forEach(function(id){var el=document.getElementById('nav-'+id);if(el)el.classList.remove('active');});
@@ -1426,7 +1426,7 @@ function nav(page){
     document.querySelectorAll('.reveal:not(.visible)').forEach(function(el){revealObs.observe(el);});
     document.querySelectorAll('.counter:not([data-counted])').forEach(function(el){counterObs.observe(el);});
     // Lazy-fill rows
-    if(page==='rewards'){fillRow('rrow1',1);fillRow('rrow2',2);fillRow('rrow3',3);}
+    if(page==='howitworks'){fillRow('rrow1',1);fillRow('rrow2',2);fillRow('rrow3',3);}
     if(page==='merchants'){fillRow('mrow1',1);fillRow('mrow2',2);fillRow('mrow3',3);fillRow('mrow4',4);fillRow('mrow5',5);}
     initGlowCards();initTiltCards();
     document.getElementById('navLinks').classList.remove('open');
@@ -1435,13 +1435,12 @@ function nav(page){
 function closeNav(){document.getElementById('navLinks').classList.remove('open');}
 function toggleNav(){document.getElementById('navLinks').classList.toggle('open');}
 // Mobile dropdown toggles
-document.getElementById('athletesDropdown').addEventListener('click',function(e){
+var athDrop=document.getElementById('athletesDropdown');
+if(athDrop)athDrop.addEventListener('click',function(e){
   if(window.innerWidth<=768){e.stopPropagation();this.classList.toggle('mobile-open');}
 });
-document.getElementById('impactDropdown').addEventListener('click',function(e){
-  if(window.innerWidth<=768){e.stopPropagation();this.classList.toggle('mobile-open');}
-});
-document.getElementById('moreDropdown').addEventListener('click',function(e){
+var moreDrop=document.getElementById('moreDropdown');
+if(moreDrop)moreDrop.addEventListener('click',function(e){
   if(window.innerWidth<=768){e.stopPropagation();this.classList.toggle('mobile-open');}
 });
 window.addEventListener('load',function(){var h=location.hash.replace('#','')||'home';nav(h);});
@@ -1544,26 +1543,23 @@ window.addEventListener('scroll',function(){
 function submitForm(id){
   var fieldMap={
     home:['hf-name','hf-phone','hf-email','hf-group'],
-    rewards:['rf-name','rf-phone','rf-email','rf-group'],
-    impact:['if-name','if-phone','if-email','if-group'],
-    k12:['k12f-name','k12f-phone','k12f-email','k12f-school'],
-    college:['colf-name','colf-phone','colf-email','colf-program'],
-    youth:['yf-name','yf-phone','yf-email','yf-team'],
+    howitworks:['rf-name','rf-phone','rf-email','rf-group'],
     licensing:['lf-name','lf-phone','lf-email','lf-org'],
-    strategic:['spf-name','spf-phone','spf-email','spf-org'],
     contact:['c-name','c-phone','c-email','c-group']
   };
   var fields=fieldMap[id]||[];
   var name=document.getElementById(fields[0]);var email=document.getElementById(fields[2]||fields[1]);
   if(name&&!name.value.trim()){alert('Please fill out your name.');return;}
   if(email&&!email.value.trim()){alert('Please fill out your email.');return;}
-  var btn=document.querySelector('#'+id+'-success').previousElementSibling;
+  var successEl=document.getElementById(id+'-success');
+  if(!successEl)return;
+  var btn=successEl.previousElementSibling;
   if(btn){btn.textContent='SENDING...';btn.disabled=true;}
   // GHL Webhook placeholder — wire up when URL provided by Colton
   // fetch('GHL_WEBHOOK_URL', {method:'POST', body: JSON.stringify({...formData}), headers:{'Content-Type':'application/json'}});
   setTimeout(function(){
     if(btn)btn.style.display='none';
-    document.getElementById(id+'-success').style.display='block';
+    successEl.style.display='block';
   },800);
 }
 </script>
