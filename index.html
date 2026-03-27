@@ -998,9 +998,9 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;o
     </div>
     <div class="footer-col">
       <h5>Legal</h5>
-      <a href="https://www.tapnpayplus.com/terms-of-use">Terms of Use</a>
-      <a href="https://www.tapnpayplus.com/privacy-policy">Privacy Policy</a>
-      <a href="https://www.tapnpayplus.com/parent-participation-agreement">Parent Participation</a>
+      <a href="/legal/terms-of-use.html">Terms of Use</a>
+      <a href="/legal/privacy-policy.html">Privacy Policy</a>
+      <a href="/legal/parent-participation-agreement.html">Parent Participation</a>
       <div class="footer-social" style="margin-top:16px;">
         <a href="https://www.instagram.com/tapnpayplus/" class="social-icon">IG</a>
         <a href="https://www.facebook.com/Tapnpay-100634918043539/" class="social-icon">FB</a>
@@ -1184,8 +1184,19 @@ function submitForm(id){
   if(!successEl)return;
   var btn=successEl.previousElementSibling;
   if(btn){btn.textContent='SENDING...';btn.disabled=true;}
-  // GHL Webhook placeholder — wire up when URL provided by Colton
-  // fetch('GHL_WEBHOOK_URL', {method:'POST', body: JSON.stringify({...formData}), headers:{'Content-Type':'application/json'}});
+  var formData={
+    name:document.getElementById(fields[0])?document.getElementById(fields[0]).value:'',
+    phone:document.getElementById(fields[1])?document.getElementById(fields[1]).value:'',
+    email:document.getElementById(fields[2])?document.getElementById(fields[2]).value:'',
+    organization:document.getElementById(fields[3])?document.getElementById(fields[3]).value:'',
+    source:'tapnpayplus-website-'+id,
+    page:id
+  };
+  fetch('https://services.leadconnectorhq.com/hooks/FhuSPxwXV1HcJQt31DdD/webhook-trigger/814f0e51-4ab0-421b-9fc1-bcbefdde7020',{
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body:JSON.stringify(formData)
+  }).catch(function(){});
   setTimeout(function(){
     if(btn)btn.style.display='none';
     successEl.style.display='block';
