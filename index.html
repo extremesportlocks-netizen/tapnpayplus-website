@@ -445,7 +445,9 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;o
     </div>
     <div class="video-frame reveal" style="max-width:800px;margin:0 auto;">
       <div class="video-inner">
-        <iframe src="https://www.youtube.com/embed/6Qs3_DnPDtE?rel=0&modestbranding=1&color=white&iv_load_policy=3" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" title="How TapNPay+ Works"></iframe>
+        <video id="explainerVideo" muted playsinline preload="metadata" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:inherit;">
+          <source src="tapnpay-explainer.mp4" type="video/mp4">
+        </video>
       </div>
     </div>
   </div>
@@ -1606,6 +1608,14 @@ window.addEventListener('scroll',function(){
     if(heroGrid)heroGrid.style.transform='translateY('+window.scrollY*0.05+'px)';
   }
 },{passive:true});
+
+// ===== VIDEO AUTOPLAY ON SCROLL =====
+var videoObs=new IntersectionObserver(function(entries){
+  entries.forEach(function(e){
+    if(e.isIntersecting){e.target.play();}else{e.target.pause();}
+  });
+},{threshold:0.4});
+document.querySelectorAll('video[muted]').forEach(function(v){videoObs.observe(v);});
 
 // ===== FORMS =====
 function submitForm(id){
