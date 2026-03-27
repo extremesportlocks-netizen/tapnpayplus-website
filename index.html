@@ -297,26 +297,16 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;o
   </div>
   <div class="nav-links" id="navLinks">
     <a onclick="nav('home')" id="nav-home">Home</a>
-    <a onclick="nav('rewards')" id="nav-rewards">Rewards</a>
+    <a onclick="nav('howitworks')" id="nav-howitworks">How It Works</a>
     <div class="nav-dropdown" id="athletesDropdown">
       <a id="nav-athletes" style="display:flex;align-items:center;gap:4px;">Athletes<span class="nav-chevron">&#9660;</span></a>
       <div class="dropdown-menu">
         <a href="https://nil.tapnpayplus.com" target="_blank">College NIL</a>
-        <a href="https://impact.tapnpayplus.com" target="_blank">High School</a>
+        <a href="https://athletes.tapnpayplus.com" target="_blank">Athlete Onboarding</a>
+        <a href="https://fans.tapnpayplus.com" target="_blank">Fan Page</a>
       </div>
     </div>
-    <div class="nav-dropdown" id="impactDropdown">
-      <a id="nav-impact" style="display:flex;align-items:center;gap:4px;cursor:pointer;">Impact Options<span class="nav-chevron">&#9660;</span></a>
-      <div class="dropdown-menu">
-        <a href="javascript:void(0)" onclick="nav('k12');closeNav();">K-12 Schools</a>
-        <a href="javascript:void(0)" onclick="nav('college');closeNav();">College Athletics</a>
-        <a href="javascript:void(0)" onclick="nav('youth');closeNav();">Youth Sports</a>
-        <a href="javascript:void(0)" onclick="nav('licensing');closeNav();">Licensing</a>
-        <div class="dropdown-divider"></div>
-        <a href="javascript:void(0)" onclick="nav('impact');closeNav();" style="color:rgba(0,230,118,0.7);">View All Options</a>
-      </div>
-    </div>
-    <a onclick="nav('strategic')" id="nav-strategic">Strategic Partners</a>
+    <a onclick="nav('licensing')" id="nav-licensing">Licensing</a>
     <a onclick="nav('merchants')" id="nav-merchants">Merchants</a>
     <div class="nav-dropdown" id="moreDropdown">
       <a style="display:flex;align-items:center;gap:4px;cursor:pointer;">More<span class="nav-chevron">&#9660;</span></a>
@@ -351,7 +341,7 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;o
       <div class="pill"><strong>$0</strong> Extra Cost to Fans</div>
     </div>
     <div class="hero-cta" style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
-      <a onclick="nav('rewards')" class="btn-primary" style="font-size:15px;padding:14px 40px;cursor:pointer;">LEARN MORE</a>
+      <a onclick="nav('howitworks')" class="btn-primary" style="font-size:15px;padding:14px 40px;cursor:pointer;">LEARN MORE</a>
       <a onclick="nav('contact')" class="btn-secondary" style="font-size:15px;padding:14px 40px;cursor:pointer;">GET STARTED</a>
     </div>
   </div>
@@ -371,7 +361,7 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;o
         <p>The TapNPay+ Cash Back Impact App is simple, easy to use, and rewards members with something they love — UNLIMITED INSTANT CASH BACK, averaging 4% on every purchase!</p>
         <p>With exclusive access to 300+ national brands, our membership provides daily impact and continuous support to your group, while giving you access to unlimited instant cash back!</p>
         <p>With Rewards built in, it's a seamless way to shop, earn, and make an impact every day.</p>
-        <a onclick="nav('rewards')" class="btn-primary" style="margin-top:8px;font-size:13px;cursor:pointer;">EXPLORE REWARDS</a>
+        <a onclick="nav('howitworks')" class="btn-primary" style="margin-top:8px;font-size:13px;cursor:pointer;">HOW IT WORKS</a>
       </div>
       <div class="reveal reveal-d2" style="display:flex;flex-direction:column;gap:20px;">
         <div class="glow-card" style="text-align:center;">
@@ -528,7 +518,7 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;o
 </div>
 
 <!-- ==================== REWARDS ==================== -->
-<div class="page" id="page-rewards">
+<div class="page" id="page-howitworks">
 <section class="page-hero">
   <div class="page-hero-bg"></div>
   <div class="section-label reveal">Rewards Program</div>
@@ -623,8 +613,8 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;o
       <div class="form-group"><input type="tel" id="rf-phone" placeholder="Phone number *"></div>
       <div class="form-group"><input type="email" id="rf-email" placeholder="Email address *"></div>
       <div class="form-group"><input type="text" id="rf-group" placeholder="Group / Organization name *"></div>
-      <button type="button" class="form-submit" onclick="submitForm('rewards')">SEND MESSAGE</button>
-      <div class="form-success" id="rewards-success">✓ Thanks! We'll be in touch within 24 hours.</div>
+      <button type="button" class="form-submit" onclick="submitForm('howitworks')">SEND MESSAGE</button>
+      <div class="form-success" id="howitworks-success">✓ Thanks! We'll be in touch within 24 hours.</div>
     </div>
   </div>
 </section>
@@ -1326,26 +1316,25 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;o
   <div class="footer-inner">
     <div class="footer-left">
       <div class="f-logo">TAPNPAY<span>+</span></div>
-      <p>Cash Back Impact App</p>
+      <p>Fan Payment Platform</p>
       <p>(800) 793-1276</p>
       <p style="margin-top:8px;">© 2026 TapNPay+. All Rights Reserved.</p>
     </div>
     <div class="footer-col">
       <h5>Platform</h5>
       <a onclick="nav('home')">Home</a>
-      <a onclick="nav('rewards')">Rewards</a>
-      <a onclick="nav('impact')">Impact Options</a>
-      <a onclick="nav('strategic')">Strategic Partners</a>
+      <a onclick="nav('howitworks')">How It Works</a>
+      <a onclick="nav('licensing')">Licensing</a>
       <a onclick="nav('merchants')">Merchants</a>
+      <a onclick="nav('about')">About Us</a>
+      <a onclick="nav('faqs')">FAQs</a>
+      <a onclick="nav('contact')">Contact Us</a>
     </div>
     <div class="footer-col">
-      <h5>Impact Options</h5>
-      <a onclick="nav('k12')">K-12 Schools</a>
-      <a onclick="nav('college')">College Athletics</a>
-      <a onclick="nav('youth')">Youth Sports</a>
-      <a onclick="nav('licensing')">Licensing</a>
+      <h5>Athletes</h5>
       <a href="https://nil.tapnpayplus.com" target="_blank">College NIL</a>
-      <a href="https://impact.tapnpayplus.com" target="_blank">High School</a>
+      <a href="https://athletes.tapnpayplus.com" target="_blank">Athlete Onboarding</a>
+      <a href="https://fans.tapnpayplus.com" target="_blank">Fan Page</a>
     </div>
     <div class="footer-col">
       <h5>Legal</h5>
