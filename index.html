@@ -372,12 +372,53 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;o
         <p>No fundraisers. No coupon books. No seasonal campaigns. Just fans paying the way they already do — except now it counts.</p>
         <a onclick="nav('howitworks')" class="btn-primary" style="margin-top:8px;font-size:13px;cursor:pointer;">HOW IT WORKS</a>
       </div>
-      <div class="reveal reveal-d2" style="display:flex;flex-direction:column;gap:20px;">
-        <div class="glow-card" style="text-align:center;">
+      <div class="reveal reveal-d2" style="display:flex;flex-direction:column;gap:20px;align-items:center;">
+        <div class="phone-mockup-wrap" style="position:relative;transform:scale(0.78);transform-origin:top center;margin-bottom:-20px;">
+          <div class="phone-glow"></div>
+          <div class="phone-shell">
+            <div class="phone-screen">
+              <div class="phone-notch"></div>
+              <div class="app-header">
+                <span class="app-header-logo">TAPNPAY<span>+</span></span>
+                <div class="app-header-icon">☰</div>
+              </div>
+              <div class="app-balance-section">
+                <div class="app-balance-label">Available Cash Back</div>
+                <div class="app-balance-amount">$24.88</div>
+                <div class="app-balance-sub">Lifetime Earned &nbsp;$397.21</div>
+                <button class="app-redeem">REDEEM CASH</button>
+              </div>
+              <div class="app-brands">
+                <div class="app-brands-label">Top Brands</div>
+                <div class="app-brand-row">
+                  <div class="app-brand-icon"><img src="https://www.google.com/s2/favicons?domain=nike.com&sz=64" alt="Nike"></div>
+                  <span class="app-brand-name">Nike</span>
+                  <span class="app-brand-pct">4%</span>
+                </div>
+                <div class="app-brand-row">
+                  <div class="app-brand-icon"><img src="https://www.google.com/s2/favicons?domain=target.com&sz=64" alt="Target"></div>
+                  <span class="app-brand-name">Target</span>
+                  <span class="app-brand-pct">4%</span>
+                </div>
+                <div class="app-brand-row">
+                  <div class="app-brand-icon"><img src="https://www.google.com/s2/favicons?domain=amazon.com&sz=64" alt="Amazon"></div>
+                  <span class="app-brand-name">Amazon</span>
+                  <span class="app-brand-pct">5%</span>
+                </div>
+                <div class="app-brand-row">
+                  <div class="app-brand-icon"><img src="https://www.google.com/s2/favicons?domain=starbucks.com&sz=64" alt="Starbucks"></div>
+                  <span class="app-brand-name">Starbucks</span>
+                  <span class="app-brand-pct">4%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="glow-card" style="text-align:center;width:100%;">
           <div style="font-family:'Bebas Neue',sans-serif;font-size:64px;color:var(--green-neon);line-height:1;">4%</div>
           <div style="font-size:14px;color:rgba(255,255,255,0.5);margin-top:4px;">Average Unlimited Instant Cash Back</div>
         </div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;width:100%;">
           <div class="step-card" style="text-align:center;padding:24px;">
             <div style="font-family:'Bebas Neue',sans-serif;font-size:40px;color:var(--purple-bright);line-height:1;"><span class="counter" data-target="300">0</span>+</div>
             <div style="font-size:12px;color:rgba(255,255,255,0.4);margin-top:4px;">National Brands</div>
