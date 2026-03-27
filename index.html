@@ -1448,10 +1448,10 @@ function nav(page){
     if(page==='howitworks'){fillRow('rrow1',1);fillRow('rrow2',2);fillRow('rrow3',3);}
     if(page==='merchants'){fillRow('mrow1',1);fillRow('mrow2',2);fillRow('mrow3',3);fillRow('mrow4',4);fillRow('mrow5',5);}
     initGlowCards();initTiltCards();
-    document.getElementById('navLinks').classList.remove('open');
+    closeNav();
   },100);
 }
-function closeNav(){document.getElementById('navLinks').classList.remove('open');}
+function closeNav(){document.getElementById('navLinks').classList.remove('open');document.querySelectorAll('.nav-dropdown.mobile-open').forEach(function(d){d.classList.remove('mobile-open');});}
 function toggleNav(){document.getElementById('navLinks').classList.toggle('open');}
 // Mobile dropdown toggles
 var athDrop=document.getElementById('athletesDropdown');
