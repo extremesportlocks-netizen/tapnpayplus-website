@@ -1657,14 +1657,16 @@ document.addEventListener('click',function(e){
   btn.appendChild(ripple);setTimeout(function(){ripple.remove();},600);
 });
 
-// ===== PARALLAX =====
+// ===== PARALLAX (desktop only — causes jitter on mobile) =====
 var heroContent=document.getElementById('heroContent');var heroGrid=document.getElementById('heroGrid');
-window.addEventListener('scroll',function(){
-  if(window.scrollY<window.innerHeight){
-    if(heroContent)heroContent.style.transform='translateY('+window.scrollY*0.15+'px)';
-    if(heroGrid)heroGrid.style.transform='translateY('+window.scrollY*0.05+'px)';
-  }
-},{passive:true});
+if(window.innerWidth>768){
+  window.addEventListener('scroll',function(){
+    if(window.scrollY<window.innerHeight){
+      if(heroContent)heroContent.style.transform='translateY('+window.scrollY*0.15+'px)';
+      if(heroGrid)heroGrid.style.transform='translateY('+window.scrollY*0.05+'px)';
+    }
+  },{passive:true});
+}
 
 // ===== VIDEO AUTOPLAY ON SCROLL =====
 var videoObs=new IntersectionObserver(function(entries){
